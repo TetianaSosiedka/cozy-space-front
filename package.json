@@ -2,7 +2,7 @@
   "name": "cozy-space-front",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/TetianaSosiedka/cozy-space-front/",
+  "homepage": "https://tetianasosiedka.github.io/cozy-space-front/",
   "dependencies": {
     "@csstools/normalize.css": "^12.0.0",
     "@testing-library/jest-dom": "^5.16.3",
