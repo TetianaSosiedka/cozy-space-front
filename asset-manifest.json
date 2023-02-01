@@ -1,25 +1,15 @@
 {
   "files": {
-    "main.css": "/cozy-space-front/static/css/main.681fce57.css",
-    "main.js": "/cozy-space-front/static/js/main.cb358efd.js",
-    "Home.js": "/cozy-space-front/static/js/Home.03a1aef5.chunk.js",
-    "Movies.js": "/cozy-space-front/static/js/Movies.3654f3cb.chunk.js",
-    "MovieDetails.js": "/cozy-space-front/static/js/MovieDetails.9782a7d5.chunk.js",
-    "Cast.js": "/cozy-space-front/static/js/Cast.e87d35a0.chunk.js",
-    "Reviews.js": "/cozy-space-front/static/js/Reviews.530d3a5e.chunk.js",
-    "static/js/774.8f473232.chunk.js": "/cozy-space-front/static/js/774.8f473232.chunk.js",
-    "index.html": "/cozy-space-front/index.html",
-    "main.681fce57.css.map": "/cozy-space-front/static/css/main.681fce57.css.map",
-    "main.cb358efd.js.map": "/cozy-space-front/static/js/main.cb358efd.js.map",
-    "Home.03a1aef5.chunk.js.map": "/cozy-space-front/static/js/Home.03a1aef5.chunk.js.map",
-    "Movies.3654f3cb.chunk.js.map": "/cozy-space-front/static/js/Movies.3654f3cb.chunk.js.map",
-    "MovieDetails.9782a7d5.chunk.js.map": "/cozy-space-front/static/js/MovieDetails.9782a7d5.chunk.js.map",
-    "Cast.e87d35a0.chunk.js.map": "/cozy-space-front/static/js/Cast.e87d35a0.chunk.js.map",
-    "Reviews.530d3a5e.chunk.js.map": "/cozy-space-front/static/js/Reviews.530d3a5e.chunk.js.map",
-    "774.8f473232.chunk.js.map": "/cozy-space-front/static/js/774.8f473232.chunk.js.map"
+    "main.css": "/TetianaSosiedka/cozy-space-front/static/css/main.950c1a1b.css",
+    "main.js": "/TetianaSosiedka/cozy-space-front/static/js/main.cf24d416.js",
+    "static/media/logo.png": "/TetianaSosiedka/cozy-space-front/static/media/logo.a6ea900739a6dbb03953.png",
+    "static/media/icons.svg": "/TetianaSosiedka/cozy-space-front/static/media/icons.4faecb8c15e8f23bac8845686329b28f.svg",
+    "index.html": "/TetianaSosiedka/cozy-space-front/index.html",
+    "main.950c1a1b.css.map": "/TetianaSosiedka/cozy-space-front/static/css/main.950c1a1b.css.map",
+    "main.cf24d416.js.map": "/TetianaSosiedka/cozy-space-front/static/js/main.cf24d416.js.map"
   },
   "entrypoints": [
-    "static/css/main.681fce57.css",
-    "static/js/main.cb358efd.js"
+    "static/css/main.950c1a1b.css",
+    "static/js/main.cf24d416.js"
   ]
 }
