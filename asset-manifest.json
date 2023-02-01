@@ -1,13 +1,25 @@
 {
   "files": {
-    "main.css": "/TetianaSosiedka/test/static/css/main.7acaea2f.css",
-    "main.js": "/TetianaSosiedka/test/static/js/main.07d3183d.js",
-    "index.html": "/TetianaSosiedka/test/index.html",
-    "main.7acaea2f.css.map": "/TetianaSosiedka/test/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/TetianaSosiedka/test/static/js/main.07d3183d.js.map"
+    "main.css": "/goit-react-hw-05-movies/static/css/main.681fce57.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.9e599b4a.js",
+    "Home.js": "/goit-react-hw-05-movies/static/js/Home.54be190f.chunk.js",
+    "Movies.js": "/goit-react-hw-05-movies/static/js/Movies.e0c12d2a.chunk.js",
+    "MovieDetails.js": "/goit-react-hw-05-movies/static/js/MovieDetails.1ab27e56.chunk.js",
+    "Cast.js": "/goit-react-hw-05-movies/static/js/Cast.2182e022.chunk.js",
+    "Reviews.js": "/goit-react-hw-05-movies/static/js/Reviews.d192fc8f.chunk.js",
+    "static/js/774.73377aff.chunk.js": "/goit-react-hw-05-movies/static/js/774.73377aff.chunk.js",
+    "index.html": "/goit-react-hw-05-movies/index.html",
+    "main.681fce57.css.map": "/goit-react-hw-05-movies/static/css/main.681fce57.css.map",
+    "main.9e599b4a.js.map": "/goit-react-hw-05-movies/static/js/main.9e599b4a.js.map",
+    "Home.54be190f.chunk.js.map": "/goit-react-hw-05-movies/static/js/Home.54be190f.chunk.js.map",
+    "Movies.e0c12d2a.chunk.js.map": "/goit-react-hw-05-movies/static/js/Movies.e0c12d2a.chunk.js.map",
+    "MovieDetails.1ab27e56.chunk.js.map": "/goit-react-hw-05-movies/static/js/MovieDetails.1ab27e56.chunk.js.map",
+    "Cast.2182e022.chunk.js.map": "/goit-react-hw-05-movies/static/js/Cast.2182e022.chunk.js.map",
+    "Reviews.d192fc8f.chunk.js.map": "/goit-react-hw-05-movies/static/js/Reviews.d192fc8f.chunk.js.map",
+    "774.73377aff.chunk.js.map": "/goit-react-hw-05-movies/static/js/774.73377aff.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.681fce57.css",
+    "static/js/main.9e599b4a.js"
   ]
 }
