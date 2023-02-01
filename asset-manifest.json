@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/test/static/css/main.681fce57.css",
-    "main.js": "/test/static/js/main.ee14ccf0.js",
-    "Home.js": "/test/static/js/Home.c5cb2c45.chunk.js",
-    "Movies.js": "/test/static/js/Movies.35065c48.chunk.js",
-    "MovieDetails.js": "/test/static/js/MovieDetails.fb3ef391.chunk.js",
-    "Cast.js": "/test/static/js/Cast.3562ed50.chunk.js",
-    "Reviews.js": "/test/static/js/Reviews.24e97161.chunk.js",
-    "static/js/774.6aac1673.chunk.js": "/test/static/js/774.6aac1673.chunk.js",
-    "index.html": "/test/index.html",
-    "main.681fce57.css.map": "/test/static/css/main.681fce57.css.map",
-    "main.ee14ccf0.js.map": "/test/static/js/main.ee14ccf0.js.map",
-    "Home.c5cb2c45.chunk.js.map": "/test/static/js/Home.c5cb2c45.chunk.js.map",
-    "Movies.35065c48.chunk.js.map": "/test/static/js/Movies.35065c48.chunk.js.map",
-    "MovieDetails.fb3ef391.chunk.js.map": "/test/static/js/MovieDetails.fb3ef391.chunk.js.map",
-    "Cast.3562ed50.chunk.js.map": "/test/static/js/Cast.3562ed50.chunk.js.map",
-    "Reviews.24e97161.chunk.js.map": "/test/static/js/Reviews.24e97161.chunk.js.map",
-    "774.6aac1673.chunk.js.map": "/test/static/js/774.6aac1673.chunk.js.map"
+    "main.css": "/cozy-space-front/static/css/main.681fce57.css",
+    "main.js": "/cozy-space-front/static/js/main.cb358efd.js",
+    "Home.js": "/cozy-space-front/static/js/Home.03a1aef5.chunk.js",
+    "Movies.js": "/cozy-space-front/static/js/Movies.3654f3cb.chunk.js",
+    "MovieDetails.js": "/cozy-space-front/static/js/MovieDetails.9782a7d5.chunk.js",
+    "Cast.js": "/cozy-space-front/static/js/Cast.e87d35a0.chunk.js",
+    "Reviews.js": "/cozy-space-front/static/js/Reviews.530d3a5e.chunk.js",
+    "static/js/774.8f473232.chunk.js": "/cozy-space-front/static/js/774.8f473232.chunk.js",
+    "index.html": "/cozy-space-front/index.html",
+    "main.681fce57.css.map": "/cozy-space-front/static/css/main.681fce57.css.map",
+    "main.cb358efd.js.map": "/cozy-space-front/static/js/main.cb358efd.js.map",
+    "Home.03a1aef5.chunk.js.map": "/cozy-space-front/static/js/Home.03a1aef5.chunk.js.map",
+    "Movies.3654f3cb.chunk.js.map": "/cozy-space-front/static/js/Movies.3654f3cb.chunk.js.map",
+    "MovieDetails.9782a7d5.chunk.js.map": "/cozy-space-front/static/js/MovieDetails.9782a7d5.chunk.js.map",
+    "Cast.e87d35a0.chunk.js.map": "/cozy-space-front/static/js/Cast.e87d35a0.chunk.js.map",
+    "Reviews.530d3a5e.chunk.js.map": "/cozy-space-front/static/js/Reviews.530d3a5e.chunk.js.map",
+    "774.8f473232.chunk.js.map": "/cozy-space-front/static/js/774.8f473232.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.681fce57.css",
-    "static/js/main.ee14ccf0.js"
+    "static/js/main.cb358efd.js"
   ]
 }
