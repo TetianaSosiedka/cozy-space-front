@@ -40,7 +40,7 @@ export const HeaderWrap = styled.div`
   padding-top: 70px;
   padding-bottom: 30px;
   background-color: ${props => props.theme.colors.accent};
-  color: ${props => props.theme.colors.accentText};
+  color: ${props => props.theme.colors.accentActive};
   @media ${props => props.theme.screens.tablet} {
     display: flex;
     padding-top: 50px;
@@ -76,18 +76,18 @@ export const Address = styled.address`
   a {
     display: flex;
     font-size: 14px;
-    color: ${props => props.theme.colors.accentText};
+    color: ${props => props.theme.colors.accentActive};
     :hover:not(.active),
     :focus-visible:not(.active) {
-      color: ${props => props.theme.colors.activeText};
+      color: ${props => props.theme.colors.accentActive};
       opacity: 0.7;
-      transition: opacity ${props => props.theme.action.timingFunction};
+      transition: opacity 0.25s ${props => props.theme.action.timingFunction};
     }
     svg {
       margin-right: 3px;
       width: 20px;
       height: 20px;
-      fill: ${props => props.theme.colors.accentText};
+      fill: ${props => props.theme.colors.accentActive};
     }
   }
 `;
@@ -116,10 +116,10 @@ export const RightColumn = styled.div`
   a:focus-visible:not(.active) {
     color: ${props => props.theme.colors.accent};
     @media ${props => props.theme.screens.tablet} {
-      color: ${props => props.theme.colors.activeText};
+      color: ${props => props.theme.colors.accentActive};
     }
     opacity: 0.7;
-    transition: opacity ${props => props.theme.action.timingFunction};
+    transition: opacity 0.25s ${props => props.theme.action.timingFunction};
   }
   span {
     color: #000000;

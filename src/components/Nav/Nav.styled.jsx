@@ -4,10 +4,10 @@ export const NavStyle = styled.nav`
   display: block;
   position: relative;
   width: 100%;
-  border-top: 2px solid ${props => props.theme.colors.accentText};
-  border-bottom: 2px solid ${props => props.theme.colors.accentText};
+  border-top: 2px solid ${props => props.theme.colors.accentActive};
+  border-bottom: 2px solid ${props => props.theme.colors.accentActive};
   background-color: ${props => props.theme.colors.accentLight};
-  color: ${props => props.theme.colors.texAccent};
+  color: ${props => props.theme.colors.accentActive};
 `;
 
 export const Ul = styled.ul`
@@ -24,12 +24,12 @@ export const Li = styled.li`
 
     font-size: 14px;
     text-transform: uppercase;
-    color: ${props => props.theme.colors.accentText};
+    color: ${props => props.theme.colors.accentActive};
     :hover:not(.active),
     :focus-visible:not(.active) {
-      color: ${props => props.theme.colors.activeText};
+      color: ${props => props.theme.colors.accentActive};
       opacity: 0.7;
-      transition: opacity ${props => props.theme.action.timingFunction};
+      transition: opacity 0.25s ${props => props.theme.action.timingFunction};
     }
   }
 `;

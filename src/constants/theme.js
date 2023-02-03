@@ -18,13 +18,11 @@ export const theme = {
     accentActive: '#384e12',
     accentLight: '#f0ebd8',
     accentDark: '#2b2e34',
-    accentText: '#384e12',
-    activeText: '#2b2e34',
   },
 
   //
   action: {
-    timingFunction: '0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+    timingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
   },
 
   //media
