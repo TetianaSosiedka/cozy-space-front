@@ -1,5 +1,7 @@
+import Container from 'components/Container/Container';
 import ProductItem from 'components/ProductItem/ProductItem';
 import MultiCarousel from 'components/MultiCarousel/MultiCarousel';
+import Footer from 'components/Footer/Footer';
 import { Main, Span /*ProductWrap*/ } from './HomePage.styled';
 
 const HomePage = () => {
@@ -14,14 +16,19 @@ const HomePage = () => {
     <ProductItem key="8" />,
   ];
   return (
-    <Main>
-      <Span>Бестселери</Span>
-      <MultiCarousel>{items}</MultiCarousel>
-      <Span>Топові товари</Span>
-      <MultiCarousel>{items}</MultiCarousel>
-      <Span>Акційні товари</Span>
-      <MultiCarousel>{items}</MultiCarousel>
-    </Main>
+    <>
+      <Container>
+        <Main>
+          <Span>Бестселери</Span>
+          <MultiCarousel>{items}</MultiCarousel>
+          <Span>Топові товари</Span>
+          <MultiCarousel>{items}</MultiCarousel>
+          <Span>Акційні товари</Span>
+          <MultiCarousel>{items}</MultiCarousel>
+        </Main>
+      </Container>
+      <Footer />
+    </>
   );
 };
 

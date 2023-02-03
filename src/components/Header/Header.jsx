@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Container from 'components/Container/Container';
 import Logo from '../Logo/Logo';
 import Nav from '../Nav/Nav';
@@ -48,7 +50,9 @@ const Header = props => {
             </Address>
           </LeftColumn>
           <LogoWrap>
-            <Logo />
+            <Link to="/">
+              <Logo />
+            </Link>
           </LogoWrap>
           <RightColumn>
             <a href="//">
