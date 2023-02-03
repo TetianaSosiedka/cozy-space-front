@@ -1,6 +1,6 @@
 import ProductItem from 'components/ProductItem/ProductItem';
 import MultiCarousel from 'components/MultiCarousel/MultiCarousel';
-import { Main, Span, ProductWrap } from './HomePage.styled';
+import { Main, Span /*ProductWrap*/ } from './HomePage.styled';
 
 const HomePage = () => {
   const items = [
