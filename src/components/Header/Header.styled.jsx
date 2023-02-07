@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { UnderlineAfter } from '../App/App.styled';
 
 export const HeaderStyle = styled.header`
   position: relative;
@@ -72,18 +73,25 @@ export const Timetable = styled.div`
     font-size: 16px;
   }
 `;
+
 export const Address = styled.address`
   @media ${props => props.theme.screens.tablet} {
     width: 100%;
   }
   a {
+    position: relative;
     display: flex;
+    margin-bottom: 5px;
     font-size: 14px;
     color: ${props => props.theme.colors.accentActive};
     :hover:not(.active),
     :focus-visible:not(.active) {
       color: ${props => props.theme.colors.accentActive};
       opacity: 0.7;
+      div::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
       transition: opacity 0.25s ${props => props.theme.action.timingFunction};
     }
     @media ${props => props.theme.screens.desktop} {
@@ -99,6 +107,15 @@ export const Address = styled.address`
         height: 22px;
       }
     }
+  }
+`;
+
+export const Underline = styled.div`
+  display: flex;
+  position: relative;
+  ::after {
+    ${UnderlineAfter};
+    background-color: ${props => props.theme.colors.accentActive};
   }
 `;
 

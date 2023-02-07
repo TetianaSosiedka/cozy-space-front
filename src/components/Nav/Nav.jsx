@@ -1,6 +1,24 @@
-import { NavStyle, Ul, Li } from './Nav.styled';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import { NavLinks } from 'constants/navLinks.js';
+
+import { NavStyle, Ul, Li, HiddenNav } from './Nav.styled';
 
 const Nav = () => {
+  const [hidden, setHidden] = useState({
+    key: '',
+    title: '',
+  });
+
+  const HandleClick = (key, title) => {
+    if (hidden.key === key) {
+      setHidden({ key: '', title: '' });
+      return;
+    }
+    setHidden({ key: key, title: title });
+  };
+
   // const face = {
   //   'makeup-removal': 'Зняття макіяжу',
 
@@ -25,35 +43,43 @@ const Nav = () => {
 
   //   'lip-care': 'Догляд для губ',
   // };
+
   return (
     <NavStyle>
       <Ul>
-        <Li key="Догляд за обличчям" to="Догляд за обличчям">
-          <a href="//">Догляд за обличчям</a>
-        </Li>
-        <Li key="Волосся">
-          <a href="//">Волосся</a>
-        </Li>
-        <Li key="Тіло">
-          <a href="//">Тіло</a>
-        </Li>
-        <Li key="Підбір тональних засобів">
-          <a href="//">Підбір тональних засобів</a>
-        </Li>
-        <Li key="Бренди">
-          <a key="Брендиa" href="//">
-            Бренди
-          </a>
-          <ul>
-            <li></li>
-          </ul>
-        </Li>
-        <Li key="Новинки">
-          <a key="Новинки" href="//">
-            Новинки
-          </a>
-        </Li>
+        {NavLinks.map(({ key, title }) => (
+          <Li
+            onClick={() => {
+              HandleClick(key, title);
+            }}
+            key={key}
+          >
+            {title}
+          </Li>
+        ))}
       </Ul>
+      {hidden.key && (
+        <HiddenNav>
+          <Link to="/home">Missha</Link>
+          <Link to="/home">Medi Peel</Link>
+          <Link to="/home">Farm Stay </Link>
+          <Link to="/home">Masil</Link>
+          <Link to="/home">Moremo</Link>
+          <Link to="/home">Daeng Gi Meo Ri</Link>
+          <Link to="/home">Missha</Link>
+          <Link to="/home">Medi Peel</Link>
+          <Link to="/home">Farm Stay </Link>
+          <Link to="/home">Masil</Link>
+          <Link to="/home">Moremo</Link>
+          <Link to="/home">Daeng Gi Meo Ri</Link>
+          <Link to="/home">Missha</Link>
+          <Link to="/home">Medi Peel</Link>
+          <Link to="/home">Farm Stay </Link>
+          <Link to="/home">Masil</Link>
+          <Link to="/home">Moremo</Link>
+          <Link to="/home">Daeng Gi Meo Ri</Link>
+        </HiddenNav>
+      )}
     </NavStyle>
   );
 };

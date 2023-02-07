@@ -12,11 +12,12 @@ import {
   LeftColumn,
   Timetable,
   Address,
+  Underline,
   LogoWrap,
   RightColumn,
 } from './Header.styled';
 
-const Header = props => {
+const Header = () => {
   return (
     <HeaderStyle>
       <FixedWrap>
@@ -35,17 +36,21 @@ const Header = props => {
               <p>Сб 11:00 - 15:00</p>
             </Timetable>
             <Address>
-              <a href="tel:+1234567890">
-                <svg>
-                  <use href={icons + '#instagram'}></use>
-                </svg>
-                (123) 456-7890
+              <a className={'underline'} href="tel:+1234567890">
+                <Underline>
+                  <svg>
+                    <use href={icons + '#instagram'}></use>
+                  </svg>
+                  (123) 456-7890
+                </Underline>
               </a>
               <a href="mailto:you@somedomain.com">
-                <svg>
-                  <use href={icons + '#mail'}></use>
-                </svg>
-                you@somedomain.com
+                <Underline>
+                  <svg>
+                    <use href={icons + '#mail'}></use>
+                  </svg>
+                  you@somedomain.com
+                </Underline>
               </a>
             </Address>
           </LeftColumn>
