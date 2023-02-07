@@ -21,8 +21,8 @@ export const Li = styled.li`
   a {
     display: block;
     padding: 10px 18px;
-
-    font-size: 14px;
+    font-family: ${props => props.theme.fonts.headers};
+    font-size: 16px;
     text-transform: uppercase;
     color: ${props => props.theme.colors.accentActive};
     :hover:not(.active),

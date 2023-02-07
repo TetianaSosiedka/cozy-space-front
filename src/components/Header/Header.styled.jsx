@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const HeaderStyle = styled.header`
   position: relative;
+  font-family: ${props => props.theme.fonts.body};
 `;
 
 export const FixedWrap = styled.div`
@@ -38,7 +39,7 @@ export const FixedWrap = styled.div`
 
 export const HeaderWrap = styled.div`
   padding-top: 70px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   background-color: ${props => props.theme.colors.accent};
   color: ${props => props.theme.colors.accentActive};
   @media ${props => props.theme.screens.tablet} {
@@ -53,7 +54,6 @@ export const LeftColumn = styled.div`
   margin-bottom: 15px;
   padding-left: 15px;
   padding-right: 15px;
-
   @media ${props => props.theme.screens.tablet} {
     flex-wrap: wrap;
     align-items: center;
@@ -67,6 +67,9 @@ export const Timetable = styled.div`
   font-size: 14px;
   p:not(:last-child) {
     margin-bottom: 5px;
+  }
+  @media ${props => props.theme.screens.desktop} {
+    font-size: 16px;
   }
 `;
 export const Address = styled.address`
@@ -83,11 +86,18 @@ export const Address = styled.address`
       opacity: 0.7;
       transition: opacity 0.25s ${props => props.theme.action.timingFunction};
     }
+    @media ${props => props.theme.screens.desktop} {
+      font-size: 16px;
+    }
     svg {
       margin-right: 3px;
       width: 20px;
       height: 20px;
       fill: ${props => props.theme.colors.accentActive};
+      @media ${props => props.theme.screens.desktop} {
+        width: 22px;
+        height: 22px;
+      }
     }
   }
 `;
@@ -123,7 +133,6 @@ export const RightColumn = styled.div`
   }
   span {
     color: #000000;
-    font-weight: bold;
     font-size: 20px;
   }
   svg {

@@ -59,7 +59,8 @@ export const Details = styled.p`
     bottom: 15px;
     width: 30px;
     height: 30px;
-    fill: ${props => props.theme.colors.accentActive};
+    //fill: ${props => props.theme.colors.accentActive};
+    fill: red;
     transition: color 0.5s ${props => props.theme.action.timingFunction};
     :hover,
     :focus {
@@ -75,6 +76,7 @@ export const Price = styled.span`
   margin-top: 20px;
   font-size: 20px;
   font-weight: bold;
+  color: ${props => props.theme.colors.accentActive};
 `;
 export const ButtonsWrap = styled.div`
   display: flex;

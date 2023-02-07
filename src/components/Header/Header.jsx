@@ -68,7 +68,7 @@ const Header = props => {
             </a>
             <a href="//">
               <svg>
-                <use href={icons + '#opencart'}></use>
+                <use href={icons + '#shopping-bag'}></use>
               </svg>
               <span>0</span>
             </a>
