@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/cozy-space-front/static/css/main.232f4ea5.css",
-    "main.js": "/cozy-space-front/static/js/main.071268fc.js",
-    "static/js/168.785e1c89.chunk.js": "/cozy-space-front/static/js/168.785e1c89.chunk.js",
+    "main.css": "/cozy-space-front/static/css/main.4134a637.css",
+    "main.js": "/cozy-space-front/static/js/main.2dfd1f0b.js",
+    "static/js/168.971630f5.chunk.js": "/cozy-space-front/static/js/168.971630f5.chunk.js",
     "static/css/554.9737773b.chunk.css": "/cozy-space-front/static/css/554.9737773b.chunk.css",
-    "static/js/554.a53e9ef2.chunk.js": "/cozy-space-front/static/js/554.a53e9ef2.chunk.js",
+    "static/js/554.f3daf370.chunk.js": "/cozy-space-front/static/js/554.f3daf370.chunk.js",
     "static/js/594.39c284fd.chunk.js": "/cozy-space-front/static/js/594.39c284fd.chunk.js",
     "static/media/product1.jpg": "/cozy-space-front/static/media/product1.37bc166d154087f3f863.jpg",
     "static/media/revicons.eot": "/cozy-space-front/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/cozy-space-front/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/logo.png": "/cozy-space-front/static/media/logo.a6ea900739a6dbb03953.png",
     "static/media/revicons.woff": "/cozy-space-front/static/media/revicons.e8746a624ed098489406.woff",
-    "static/media/icons.svg": "/cozy-space-front/static/media/icons.4037216d736be987b8018ea06c88a323.svg",
+    "static/media/icons.svg": "/cozy-space-front/static/media/icons.8baa0e8164c175d5bcc4d3bcf358dd11.svg",
     "index.html": "/cozy-space-front/index.html",
-    "main.232f4ea5.css.map": "/cozy-space-front/static/css/main.232f4ea5.css.map",
-    "main.071268fc.js.map": "/cozy-space-front/static/js/main.071268fc.js.map",
-    "168.785e1c89.chunk.js.map": "/cozy-space-front/static/js/168.785e1c89.chunk.js.map",
+    "main.4134a637.css.map": "/cozy-space-front/static/css/main.4134a637.css.map",
+    "main.2dfd1f0b.js.map": "/cozy-space-front/static/js/main.2dfd1f0b.js.map",
+    "168.971630f5.chunk.js.map": "/cozy-space-front/static/js/168.971630f5.chunk.js.map",
     "554.9737773b.chunk.css.map": "/cozy-space-front/static/css/554.9737773b.chunk.css.map",
-    "554.a53e9ef2.chunk.js.map": "/cozy-space-front/static/js/554.a53e9ef2.chunk.js.map",
+    "554.f3daf370.chunk.js.map": "/cozy-space-front/static/js/554.f3daf370.chunk.js.map",
     "594.39c284fd.chunk.js.map": "/cozy-space-front/static/js/594.39c284fd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.232f4ea5.css",
-    "static/js/main.071268fc.js"
+    "static/css/main.4134a637.css",
+    "static/js/main.2dfd1f0b.js"
   ]
 }
