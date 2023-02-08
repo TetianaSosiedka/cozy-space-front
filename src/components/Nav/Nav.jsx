@@ -43,7 +43,7 @@ const Nav = () => {
             <Link
               onClick={() => setHidden({ key: '', hidden: false })}
               key={item}
-              to={`/products/${HandleLink(item)}`}
+              to={`/${HandleLink(item)}`}
             >
               {item}
             </Link>

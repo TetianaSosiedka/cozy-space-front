@@ -1,18 +1,13 @@
 import styled from 'styled-components';
 
-export const ItemWrap = styled.a`
+export const ItemWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
-  //@media screen and (min-width: 550px) {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-bottom: 15px;
-  //}
-  :hover {
-    cursor: pointer;
-  }
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
 `;
 
 export const OverlayWrap = styled.div`
@@ -29,45 +24,85 @@ export const Overlay = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   background-color: ${props => props.theme.colors.accentActive};
   opacity: 0.85;
   overflow: hidden;
   width: 100%;
   height: 0;
+  overflow: hidden;
   transition: 0.5s ${props => props.theme.action.timingFunction};
   img {
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+`;
+
+export const Description = styled.p`
+  padding: 10px;
+  font-family: ${props => props.theme.fonts.body};
+  font-size: 12px;
+  color: ${props => props.theme.colors.accent};
+  transition: color 0.25s ${props => props.theme.action.timingFunction};
+  @media ${props => props.theme.screens.mobile} {
+    line-height: 1.3;
+    padding: 15px;
+    font-size: 14px;
+  }
+  transition: color 0.25s ${props => props.theme.action.timingFunction};
+  :hover,
+  :focus {
+    color: ${props => props.theme.colors.accentLight};
   }
 `;
 
 export const Caption = styled.div`
   width: 100%;
-  padding-top: 30px;
+  padding-top: 15px;
+  @media ${props => props.theme.screens.tablet} {
+    padding-top: 20px;
+  }
 `;
 
-export const Details = styled.p`
+export const Details = styled.div`
   position: relative;
   padding-bottom: 20px;
-
   svg {
     position: absolute;
     right: 10px;
     bottom: 15px;
     width: 30px;
     height: 30px;
-    //fill: ${props => props.theme.colors.accentActive};
-    fill: red;
-    transition: color 0.5s ${props => props.theme.action.timingFunction};
+    fill: ${props => props.theme.colors.accentActive};
+    transition: color 0.25s ${props => props.theme.action.timingFunction};
     :hover,
     :focus {
-      fill: ${props => props.theme.colors.accent};
-      transition: color 0.5s ${props => props.theme.action.timingFunction};
+      fill: red;
+      transition: color 0.25s ${props => props.theme.action.timingFunction};
     }
+  }
+`;
+
+export const Title = styled.h2`
+  font-family: ${props => props.theme.fonts.headers};
+  font-weight: 500;
+  font-size: 15px;
+  @media ${props => props.theme.screens.mobile} {
+    padding-bottom: 2px;
+    font-size: 16px;
+  }
+`;
+
+export const ShortDescription = styled.span`
+  font-family: ${props => props.theme.fonts.body};
+  font-weight: 400;
+  font-size: 14px;
+  @media ${props => props.theme.screens.mobile} {
+    font-size: 16px;
   }
 `;
 
@@ -87,33 +122,32 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
   border: none;
+  font-family: ${props => props.theme.fonts.headers};
   font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: ${props => props.theme.colors.accent};
-  background-color: ${props => props.theme.colors.accentActive};
-  transition: 0.5s ${props => props.theme.action.timingFunction};
-  :not(:last-child) {
-    border-right: solid 1px ${props => props.theme.colors.accent};
-  }
+  color: ${props => props.theme.colors.accentDark};
+  background-color: ${props => props.theme.colors.accent};
+  transition: 0.25s ${props => props.theme.action.timingFunction};
   svg {
     margin-right: 5px;
     height: 20px;
     width: 20px;
-    fill: ${props => props.theme.colors.accent};
-    transition: 0.5s ${props => props.theme.action.timingFunction};
+    fill: ${props => props.theme.colors.accentDark};
+    transition: 0.25s ${props => props.theme.action.timingFunction};
   }
   :hover:not(.active),
   :focus-visible:not(.active) {
-    color: ${props => props.theme.colors.accentDark};
-    background-color: ${props => props.theme.colors.accent};
+    color: ${props => props.theme.colors.accent};
+    background-color: ${props => props.theme.colors.accentActive};
     transition: 0.5s ${props => props.theme.action.timingFunction};
     svg {
-      fill: ${props => props.theme.colors.accentDark};
+      fill: ${props => props.theme.colors.accent};
     }
   }
   @media screen and (min-width: 551px) {

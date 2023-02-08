@@ -19,7 +19,7 @@ const ProductsPage = () => {
       <Container>
         <Main>
           {items.map(item => (
-            <ProductWrap>{item}</ProductWrap>
+            <ProductWrap key={item.key}>{item}</ProductWrap>
           ))}
         </Main>
       </Container>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import lightLeaf from 'images/light-leaf.png';
 import icons from 'images/icons.svg';
 import {
@@ -5,8 +6,11 @@ import {
   OverlayWrap,
   Img,
   Overlay,
+  Description,
   Caption,
   Details,
+  Title,
+  ShortDescription,
   Price,
   ButtonsWrap,
   Button,
@@ -19,18 +23,28 @@ const ProductItem = () => {
       <OverlayWrap>
         <Img src={Product1} alt="" />
         <Overlay>
-          <img src={lightLeaf} alt="small logo" />
+          <Link to="">
+            <img src={lightLeaf} alt="small logo" />
+            <Description>
+              ✅насичено зволожує , завдяки доглядовій есенції в складіБ
+              <br />
+              ✅Ідеально рівний колір обличчя ✅ідеальне покриття від засобу
+              <br />
+              ✅Ідеально зручна упаковка <br />
+              ✅Ідеальний склад <br />
+              ✅Ідеальний SPF50+/PA+++
+            </Description>
+          </Link>
         </Overlay>
       </OverlayWrap>
       <Caption>
         <Details>
-          ✨Missha Magic Cushion Moist Up Тональний крем-кушон зволожуючий✨
+          <Title>Missha Magic Cushion Moist Up</Title>
+          <ShortDescription>Тональний крем-кушон зволожуючий</ShortDescription>
           <Price>398 грн</Price>
-          {window.innerWidth >= 551 && window.innerWidth < 1280 && (
-            <svg>
-              <use href={icons + '#heart'}></use>
-            </svg>
-          )}
+          <svg>
+            <use href={icons + '#heart'}></use>
+          </svg>
         </Details>
         <ButtonsWrap>
           <Button type="button">
@@ -39,14 +53,6 @@ const ProductItem = () => {
             </svg>
             до кошика
           </Button>
-          {(window.innerWidth < 551 || window.innerWidth >= 1280) && (
-            <Button type="button">
-              <svg>
-                <use href={icons + '#heart'}></use>
-              </svg>
-              в улюблені
-            </Button>
-          )}
         </ButtonsWrap>
       </Caption>
     </ItemWrap>
