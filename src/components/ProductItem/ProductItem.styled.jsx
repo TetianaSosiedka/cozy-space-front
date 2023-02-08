@@ -5,10 +5,11 @@ export const ItemWrap = styled.a`
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
-  @media screen and (min-width: 550px) {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+  //@media screen and (min-width: 550px) {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 15px;
+  //}
   :hover {
     cursor: pointer;
   }

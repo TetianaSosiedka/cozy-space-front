@@ -8,7 +8,7 @@ export const Main = styled.main`
 export const Span = styled.span`
   display: flex;
   justify-content: center;
-  margin-top: 65px;
+  margin-top: 50px;
   :first-child {
     margin-top: 0;
   }

@@ -1,48 +1,27 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { NavLinks } from 'constants/navLinks.js';
+import { NavLinks, HiddenNavLinks } from 'constants/navLinks.js';
 
 import { NavStyle, Ul, Li, HiddenNav } from './Nav.styled';
 
 const Nav = () => {
   const [hidden, setHidden] = useState({
     key: '',
-    title: '',
+    hidden: false,
   });
 
-  const HandleClick = (key, title) => {
+  const HandleClick = key => {
     if (hidden.key === key) {
-      setHidden({ key: '', title: '' });
+      setHidden({ key: '', hidden: false });
       return;
     }
-    setHidden({ key: key, title: title });
+    setHidden({ key: key, hidden: true });
   };
 
-  // const face = {
-  //   'makeup-removal': 'Зняття макіяжу',
-
-  //   'skin-cleansing': 'Очищення шкіри',
-
-  //   peeling: 'Пілінг',
-
-  //   toning: 'Тонізація',
-
-  //   'enhanced-care':
-  //     'Посилений догляд ( сиворотки, ампули , есенції , емульсії )',
-
-  //   'face-cream': 'Крем для обличчя',
-
-  //   'eye-cream': 'Крем навколо очей',
-
-  //   'decolletage-area': 'Догляд за зоною декольте',
-
-  //   mask: 'маска(нічні або тканинні доглядові)',
-
-  //   'sun-protection': 'сонцезахист',
-
-  //   'lip-care': 'Догляд для губ',
-  // };
+  const HandleLink = link => {
+    return link.trim().toLowerCase().split(' ').join('-');
+  };
 
   return (
     <NavStyle>
@@ -50,7 +29,7 @@ const Nav = () => {
         {NavLinks.map(({ key, title }) => (
           <Li
             onClick={() => {
-              HandleClick(key, title);
+              HandleClick(key);
             }}
             key={key}
           >
@@ -58,26 +37,17 @@ const Nav = () => {
           </Li>
         ))}
       </Ul>
-      {hidden.key && (
+      {hidden.hidden && (
         <HiddenNav>
-          <Link to="/home">Missha</Link>
-          <Link to="/home">Medi Peel</Link>
-          <Link to="/home">Farm Stay </Link>
-          <Link to="/home">Masil</Link>
-          <Link to="/home">Moremo</Link>
-          <Link to="/home">Daeng Gi Meo Ri</Link>
-          <Link to="/home">Missha</Link>
-          <Link to="/home">Medi Peel</Link>
-          <Link to="/home">Farm Stay </Link>
-          <Link to="/home">Masil</Link>
-          <Link to="/home">Moremo</Link>
-          <Link to="/home">Daeng Gi Meo Ri</Link>
-          <Link to="/home">Missha</Link>
-          <Link to="/home">Medi Peel</Link>
-          <Link to="/home">Farm Stay </Link>
-          <Link to="/home">Masil</Link>
-          <Link to="/home">Moremo</Link>
-          <Link to="/home">Daeng Gi Meo Ri</Link>
+          {HiddenNavLinks.map(item => (
+            <Link
+              onClick={() => setHidden({ key: '', hidden: false })}
+              key={item}
+              to={`/products/${HandleLink(item)}`}
+            >
+              {item}
+            </Link>
+          ))}
         </HiddenNav>
       )}
     </NavStyle>

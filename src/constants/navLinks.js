@@ -6,3 +6,28 @@ export const NavLinks = [
   { key: 'brands', title: 'Бренди' },
   { key: 'novelty', title: 'Новинки' },
 ];
+
+export const HiddenNavLinks = [
+  'Missha',
+  'Medi Peel',
+  'Farm Stay',
+  'Masil',
+  'Moremo',
+  'Daeng Gi Meo Ri',
+  'Dr.Jart + ',
+  'Innisfree',
+  'Eyenlip',
+  'Valmona',
+  'HOLIKA HOLIKA',
+  'Ellips',
+  'Bathpa',
+  'Kiss by Rosemine',
+  'Too Cool For School',
+  'Bueno',
+  'Jennyhouse',
+  'Etude House',
+  'The Ordinary',
+  'Jigott',
+  'Lador',
+  'Naturia',
+];

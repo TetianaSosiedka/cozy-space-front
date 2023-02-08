@@ -129,7 +129,7 @@ export const RightColumn = styled.div`
   position: absolute;
   top: 8px;
   right: 0;
-  z-index: 1;
+  z-index: 3;
   padding-right: 15px;
   @media ${props => props.theme.screens.tablet} {
     position: relative;
@@ -138,7 +138,6 @@ export const RightColumn = styled.div`
     align-items: center;
     justify-content: flex-end;
   }
-
   a:hover:not(.active),
   a:focus-visible:not(.active) {
     color: ${props => props.theme.colors.accent};
