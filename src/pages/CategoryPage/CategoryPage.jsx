@@ -1,7 +1,7 @@
 import Container from 'components/Container/Container';
-import ProductItem from 'components/ProductItem/ProductItem';
+import ProductItem from 'components/ProductCard/ProductCard';
 import Footer from 'components/Footer/Footer';
-import { Main, ProductWrap } from './ProductsPage.styled';
+import { Main, ProductWrap } from './CategoryPage.styled';
 
 const ProductsPage = () => {
   const items = [

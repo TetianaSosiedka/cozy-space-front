@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ConvertingLinks } from 'hooks/ConvertingLinks';
 
 import { NavLinks, HiddenNavLinks } from 'constants/navLinks.js';
 
@@ -17,10 +18,6 @@ const Nav = () => {
       return;
     }
     setHidden({ key: key, hidden: true });
-  };
-
-  const HandleLink = link => {
-    return link.trim().toLowerCase().split(' ').join('-');
   };
 
   return (
@@ -43,7 +40,7 @@ const Nav = () => {
             <Link
               onClick={() => setHidden({ key: '', hidden: false })}
               key={item}
-              to={`/${HandleLink(item)}`}
+              to={`/${ConvertingLinks(item)}`}
             >
               {item}
             </Link>

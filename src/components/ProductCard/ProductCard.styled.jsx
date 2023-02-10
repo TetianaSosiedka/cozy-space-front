@@ -63,27 +63,43 @@ export const Description = styled.p`
 export const Caption = styled.div`
   width: 100%;
   padding-top: 15px;
+  background-color: #ffffff;
+  box-shadow: ${props => props.theme.colors.accentActive} 0px -45px 30px -28px
+    inset;
+  transition: box-shadow 0.25s ${props => props.theme.action.timingFunction};
   @media ${props => props.theme.screens.tablet} {
     padding-top: 20px;
+  }
+  :hover,
+  :focus {
+    box-shadow: ${props => props.theme.colors.accentActive} 0px -45px 33px -25px
+      inset;
+    transition: box-shadow 0.25s ${props => props.theme.action.timingFunction};
   }
 `;
 
 export const Details = styled.div`
   position: relative;
-  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+`;
+
+export const ButtonHeart = styled.button`
+  border: none;
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  background-color: transparent;
   svg {
-    position: absolute;
-    right: 10px;
-    bottom: 15px;
     width: 30px;
     height: 30px;
     fill: ${props => props.theme.colors.accentActive};
     transition: color 0.25s ${props => props.theme.action.timingFunction};
-    :hover,
-    :focus {
-      fill: red;
-      transition: color 0.25s ${props => props.theme.action.timingFunction};
-    }
+  }
+  :hover svg,
+  :focus svg {
+    fill: red;
+    transition: color 0.25s ${props => props.theme.action.timingFunction};
   }
 `;
 
@@ -110,6 +126,7 @@ export const Price = styled.span`
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  padding-bottom: 20px;
   font-size: 20px;
   font-weight: bold;
   color: ${props => props.theme.colors.accentActive};
