@@ -64,7 +64,7 @@ export const Caption = styled.div`
   width: 100%;
   padding-top: 15px;
   background-color: #ffffff;
-  box-shadow: ${props => props.theme.colors.accentActive} 0px -45px 30px -28px
+  box-shadow: ${props => props.theme.colors.accentActive} 0px -45px 30px -26px
     inset;
   transition: box-shadow 0.25s ${props => props.theme.action.timingFunction};
   @media ${props => props.theme.screens.tablet} {
@@ -72,7 +72,7 @@ export const Caption = styled.div`
   }
   :hover,
   :focus {
-    box-shadow: ${props => props.theme.colors.accentActive} 0px -45px 33px -25px
+    box-shadow: ${props => props.theme.colors.accentActive} 0px -50px 36px -28px
       inset;
     transition: box-shadow 0.25s ${props => props.theme.action.timingFunction};
   }
@@ -133,41 +133,4 @@ export const Price = styled.span`
 `;
 export const ButtonsWrap = styled.div`
   display: flex;
-`;
-
-export const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: none;
-  font-family: ${props => props.theme.fonts.headers};
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: ${props => props.theme.colors.accentDark};
-  background-color: ${props => props.theme.colors.accent};
-  transition: 0.25s ${props => props.theme.action.timingFunction};
-  svg {
-    margin-right: 5px;
-    height: 20px;
-    width: 20px;
-    fill: ${props => props.theme.colors.accentDark};
-    transition: 0.25s ${props => props.theme.action.timingFunction};
-  }
-  :hover:not(.active),
-  :focus-visible:not(.active) {
-    color: ${props => props.theme.colors.accent};
-    background-color: ${props => props.theme.colors.accentActive};
-    transition: 0.5s ${props => props.theme.action.timingFunction};
-    svg {
-      fill: ${props => props.theme.colors.accent};
-    }
-  }
-  @media screen and (min-width: 551px) {
-    width: 100%;
-  }
 `;

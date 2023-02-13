@@ -14,7 +14,11 @@ class Gallery extends React.Component {
   render() {
     return (
       <GaleryWrap>
-        <ImageGallery items={images} thumbnailPosition={'left'} />
+        <ImageGallery
+          items={images}
+          thumbnailPosition={'left'}
+          // showThumbnails={false}
+        />
       </GaleryWrap>
     );
   }

@@ -28,11 +28,16 @@ export const product = {
     Product11,
     Product12,
   ],
-  shortDescription: 'Тональний крем-кушон зволожуючий',
-  description:
+  name: 'Тональний крем-кушон зволожуючий',
+  shortDescription:
     '✅насичено зволожує, завдяки доглядовій есенції в складіБ, ✅Ідеально рівний колір обличчя ✅ідеальне покриття від засобу, ✅Ідеально зручна упаковка, ✅Ідеальний склад, ✅Ідеальний SPF50+/PA+++',
+  fullDescription:
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+
   price: 398,
+  volume: 150,
   brend: 'bueno',
   new: false,
+  available: true,
   favorite: false,
 };

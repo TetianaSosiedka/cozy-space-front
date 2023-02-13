@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { ConvertingLinks } from 'hooks/ConvertingLinks';
 import lightLeaf from 'images/light-leaf.png';
 import icons from 'images/icons.svg';
+import Button from 'components/Button/Button';
 import { product } from 'constants/product';
+
 import {
   ItemWrap,
   OverlayWrap,
@@ -16,7 +18,6 @@ import {
   Price,
   ButtonHeart,
   ButtonsWrap,
-  Button,
 } from './ProductCard.styled';
 
 const ProductItem = () => {
@@ -31,7 +32,7 @@ const ProductItem = () => {
             )}`}
           >
             <img src={lightLeaf} alt="small logo" />
-            <Description>{product.description}</Description>
+            <Description>{product.shortDescription}</Description>
           </Link>
         </Overlay>
       </OverlayWrap>
@@ -43,7 +44,7 @@ const ProductItem = () => {
             )}`}
           >
             <Title>{product.title}</Title>
-            <ShortDescription>{product.shortDescription}</ShortDescription>
+            <ShortDescription>{product.name}</ShortDescription>
             <Price>{product.price} грн</Price>
           </Link>
           <ButtonHeart>
@@ -60,10 +61,7 @@ const ProductItem = () => {
           </ButtonHeart>
         </Details>
         <ButtonsWrap>
-          <Button type="button">
-            <svg>
-              <use href={icons + '#opencart'}></use>
-            </svg>
+          <Button type={'button'} iconId={'opencart'}>
             до кошика
           </Button>
         </ButtonsWrap>
