@@ -32,8 +32,8 @@ const Header = () => {
         <HeaderWrap>
           <LeftColumn>
             <Timetable>
-              <p>Пн-Пт 10:00 - 16:30 </p>
-              <p>Сб 11:00 - 15:00</p>
+              <p>Пн-Пт 09:00 - 20:00 </p>
+              <p>Сб-Нд 10:00 - 18:00</p>
             </Timetable>
             <Address>
               <a className={'underline'} href="tel:+1234567890">

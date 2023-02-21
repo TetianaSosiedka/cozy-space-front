@@ -37,6 +37,7 @@ export const product = {
   price: 398,
   volume: 150,
   brend: 'bueno',
+  markers: ['moisten', 'light', 'pale'],
   new: false,
   available: true,
   favorite: false,

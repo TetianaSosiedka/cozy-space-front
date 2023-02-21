@@ -1,7 +1,8 @@
 import Container from 'components/Container/Container';
 import ProductItem from 'components/ProductCard/ProductCard';
 import Footer from 'components/Footer/Footer';
-import { Main, ProductWrap } from './CategoryPage.styled';
+import ContainerItems from 'components/ContainerItems/ContainerItems';
+// import { Main, ProductWrap } from './CategoryPage.styled';
 
 const ProductsPage = () => {
   const items = [
@@ -17,11 +18,12 @@ const ProductsPage = () => {
   return (
     <>
       <Container>
-        <Main>
+        <ContainerItems items={items} />
+        {/* <Main>
           {items.map(item => (
             <ProductWrap key={item.key}>{item}</ProductWrap>
           ))}
-        </Main>
+        </Main> */}
       </Container>
       <Footer />
     </>

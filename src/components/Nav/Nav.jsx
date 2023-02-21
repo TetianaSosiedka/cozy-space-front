@@ -23,16 +23,25 @@ const Nav = () => {
   return (
     <NavStyle>
       <Ul>
-        {NavLinks.map(({ key, title }) => (
-          <Li
-            onClick={() => {
-              HandleClick(key);
-            }}
-            key={key}
-          >
-            {title}
-          </Li>
-        ))}
+        {NavLinks.map(({ key, title }) => {
+          if (key === 'brands') {
+            return (
+              <Li
+                key={key}
+                onClick={() => {
+                  HandleClick(key);
+                }}
+              >
+                {title}
+              </Li>
+            );
+          }
+          return (
+            <Li key={key}>
+              <Link to={`/${ConvertingLinks(key)}`}>{title}</Link>
+            </Li>
+          );
+        })}
       </Ul>
       {hidden.hidden && (
         <HiddenNav>
