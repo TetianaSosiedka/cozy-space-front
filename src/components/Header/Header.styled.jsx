@@ -9,7 +9,7 @@ export const HeaderStyle = styled.header`
 export const FixedWrap = styled.div`
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 10001;
   width: 100%;
   background-color: ${props => props.theme.colors.accentActive};
   a {
@@ -126,10 +126,10 @@ export const LogoWrap = styled.div`
 `;
 
 export const RightColumn = styled.div`
-  position: absolute;
+  position: fixed;
   top: 8px;
   right: 0;
-  z-index: 3;
+  z-index: 10001;
   padding-right: 15px;
   @media ${props => props.theme.screens.tablet} {
     position: relative;

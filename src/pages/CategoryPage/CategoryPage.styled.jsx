@@ -5,7 +5,6 @@ export const Main = styled.main`
   flex-wrap: wrap;
   padding-top: 40px;
   padding-bottom: 60px;
-  margin: 0 -30px;
 `;
 
 export const ProductWrap = styled.div`
