@@ -14,6 +14,7 @@ export const App = () => {
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
         <Route path="/:category" element={<CategoryPage />} />
+        <Route path="/brends/:brend" element={<CategoryPage />} />
         <Route path="/:brend/:product" element={<ProductItemPage />} />
       </Route>
       <Route path="*" element={<p>Path not resolved</p>} />

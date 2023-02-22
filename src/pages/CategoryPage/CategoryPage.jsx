@@ -1,3 +1,5 @@
+import { useParams } from 'react-router-dom';
+
 import Container from 'components/Container/Container';
 import ProductItem from 'components/ProductCard/ProductCard';
 import Footer from 'components/Footer/Footer';
@@ -5,6 +7,8 @@ import ContainerItems from 'components/ContainerItems/ContainerItems';
 // import { Main, ProductWrap } from './CategoryPage.styled';
 
 const ProductsPage = () => {
+  const { category = 'brends', brend = '' } = useParams();
+  console.log(category, brend);
   const items = [
     <ProductItem key="1" />,
     <ProductItem key="2" />,
@@ -19,11 +23,6 @@ const ProductsPage = () => {
     <>
       <Container>
         <ContainerItems items={items} />
-        {/* <Main>
-          {items.map(item => (
-            <ProductWrap key={item.key}>{item}</ProductWrap>
-          ))}
-        </Main> */}
       </Container>
       <Footer />
     </>

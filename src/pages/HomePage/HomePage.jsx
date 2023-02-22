@@ -2,7 +2,7 @@ import Container from 'components/Container/Container';
 import ProductItem from 'components/ProductCard/ProductCard';
 import MultiCarousel from 'components/MultiCarousel/MultiCarousel';
 import Footer from 'components/Footer/Footer';
-import { Main, Span /*ProductWrap*/ } from './HomePage.styled';
+import { Main, Span } from './HomePage.styled';
 
 const HomePage = () => {
   const items = [

@@ -3,6 +3,7 @@ import Footer from 'components/Footer/Footer';
 import Gallery from '../../components/Gallery/Gallery';
 import Button from 'components/Button/Button';
 import ProductItem from 'components/ProductCard/ProductCard';
+import ContainerItems from 'components/ContainerItems/ContainerItems';
 import icons from 'images/icons.svg';
 import {
   Article,
@@ -16,8 +17,6 @@ import {
   Available,
   Description,
   AddTitle,
-  AdditionsProducts,
-  AdditionsProductsWrap,
 } from './ProductItemPage.styled';
 
 import { product } from '../../constants/product';
@@ -77,13 +76,7 @@ const ProductsPage = () => {
           </RightColumn>
           <Description>{product.fullDescription}</Description>
           <AddTitle>Посилення ефекту</AddTitle>
-          <AdditionsProducts>
-            {items.map(item => (
-              <AdditionsProductsWrap key={item.key}>
-                {item}
-              </AdditionsProductsWrap>
-            ))}
-          </AdditionsProducts>
+          <ContainerItems items={items} />
         </Article>
       </Container>
       <Footer />

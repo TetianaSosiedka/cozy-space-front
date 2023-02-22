@@ -2,34 +2,42 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ConvertingLinks } from 'hooks/ConvertingLinks';
 
-import { NavLinks, HiddenNavLinks } from 'constants/navLinks.js';
+import { NavLinks } from 'constants/navLinks.js';
 
 import { NavStyle, Ul, Li, HiddenNav } from './Nav.styled';
 
 const Nav = () => {
-  const [hidden, setHidden] = useState({
-    key: '',
+  const [{ hidden, hiddenkey }, setHidden] = useState({
     hidden: false,
+    hiddenkey: '',
   });
+  const [stateHiddenLinks, setStateHiddenLinks] = useState([]);
 
-  const HandleClick = key => {
-    if (hidden.key === key) {
-      setHidden({ key: '', hidden: false });
+  const HandleClick = async (hiddenNavLinks, key) => {
+    if (hiddenkey !== '' && hiddenkey === key) {
+      setHidden({ hidden: false });
+      setStateHiddenLinks([]);
       return;
     }
-    setHidden({ key: key, hidden: true });
+    if (hiddenkey !== '' && hiddenkey !== key) {
+      setHidden({ hidden: true, hiddenkey: key });
+      setStateHiddenLinks(hiddenNavLinks);
+      return;
+    }
+    setHidden({ hidden: !hidden, hiddenkey: key });
+    setStateHiddenLinks(hiddenNavLinks);
   };
 
   return (
     <NavStyle>
       <Ul>
-        {NavLinks.map(({ key, title }) => {
-          if (key === 'brands') {
+        {NavLinks.map(({ key, title, hiddenNavLinks }) => {
+          if (hiddenNavLinks) {
             return (
               <Li
                 key={key}
                 onClick={() => {
-                  HandleClick(key);
+                  HandleClick(hiddenNavLinks, key);
                 }}
               >
                 {title}
@@ -37,19 +45,24 @@ const Nav = () => {
             );
           }
           return (
-            <Li key={key}>
+            <Li
+              key={key}
+              onClick={() => {
+                setHidden({ hidden: false });
+              }}
+            >
               <Link to={`/${ConvertingLinks(key)}`}>{title}</Link>
             </Li>
           );
         })}
       </Ul>
-      {hidden.hidden && (
+      {hidden && (
         <HiddenNav>
-          {HiddenNavLinks.map(item => (
+          {stateHiddenLinks.map(item => (
             <Link
-              onClick={() => setHidden({ key: '', hidden: false })}
+              onClick={() => setHidden(!hidden)}
               key={item}
-              to={`/${ConvertingLinks(item)}`}
+              to={`/${'brends'}/${ConvertingLinks(item)}`}
             >
               {item}
             </Link>

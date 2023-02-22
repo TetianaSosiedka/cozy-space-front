@@ -122,20 +122,3 @@ export const AddTitle = styled.h3`
   font-size: 30px;
   color: ${props => props.theme.colors.accentActive};
 `;
-
-export const AdditionsProducts = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 30px;
-`;
-
-export const AdditionsProductsWrap = styled.div`
-  margin-bottom: 15px;
-  width: 50%;
-  @media ${props => props.theme.screens.tablet} {
-    flex-basis: calc((100%) / 3);
-  }
-  @media ${props => props.theme.screens.desktop} {
-    flex-basis: calc((100%) / 4);
-  }
-`;
