@@ -26,11 +26,7 @@ const ProductItem = () => {
       <OverlayWrap>
         <Img src={product.coverImage} alt="" />
         <Overlay>
-          <Link
-            to={`/${ConvertingLinks(product.brend)}/${ConvertingLinks(
-              product.title
-            )}`}
-          >
+          <Link to={`/product/${ConvertingLinks(product.title)}`}>
             <img src={lightLeaf} alt="small logo" />
             <Description>{product.shortDescription}</Description>
           </Link>
@@ -38,11 +34,7 @@ const ProductItem = () => {
       </OverlayWrap>
       <Caption>
         <Details>
-          <Link
-            to={`/${ConvertingLinks(product.brend)}/${ConvertingLinks(
-              product.title
-            )}`}
-          >
+          <Link to={`/product/${ConvertingLinks(product.title)}`}>
             <Title>{product.title}</Title>
             <ShortDescription>{product.name}</ShortDescription>
             <Price>{product.price} грн</Price>

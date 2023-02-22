@@ -51,22 +51,39 @@ const Nav = () => {
                 setHidden({ hidden: false });
               }}
             >
-              <Link to={`/${ConvertingLinks(key)}`}>{title}</Link>
+              <Link to={`/${ConvertingLinks(key)}/selection`}>{title}</Link>
             </Li>
           );
         })}
       </Ul>
       {hidden && (
         <HiddenNav>
-          {stateHiddenLinks.map(item => (
-            <Link
-              onClick={() => setHidden(!hidden)}
-              key={item}
-              to={`/${'brends'}/${ConvertingLinks(item)}`}
-            >
-              {item}
-            </Link>
-          ))}
+          {stateHiddenLinks.map(item => {
+            if (hiddenkey === 'brands') {
+              return (
+                <Link
+                  onClick={() => setHidden(!hidden)}
+                  key={item}
+                  to={`/${ConvertingLinks(item)}`}
+                >
+                  {item}
+                </Link>
+              );
+            }
+            for (const entre of Object.entries(item)) {
+              return (
+                <Link
+                  onClick={() => setHidden(!hidden)}
+                  key={entre[1]}
+                  to={`${ConvertingLinks(hiddenkey)}/${ConvertingLinks(
+                    entre[0]
+                  )}`}
+                >
+                  {entre[1]}
+                </Link>
+              );
+            }
+          })}
         </HiddenNav>
       )}
     </NavStyle>

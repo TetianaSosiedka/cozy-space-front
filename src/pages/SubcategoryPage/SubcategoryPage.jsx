@@ -4,9 +4,8 @@ import Container from 'components/Container/Container';
 import ProductItem from 'components/ProductCard/ProductCard';
 import Footer from 'components/Footer/Footer';
 import ContainerItems from 'components/ContainerItems/ContainerItems';
-// import { Main, ProductWrap } from './CategoryPage.styled';
 
-const CategoryPage = () => {
+const SubcategoryPage = () => {
   const { category = 'brends', brend = '' } = useParams();
   console.log(category, brend);
   const items = [
@@ -22,6 +21,7 @@ const CategoryPage = () => {
   return (
     <>
       <Container>
+        <>Subcategory</>
         <ContainerItems items={items} />
       </Container>
       <Footer />
@@ -29,4 +29,4 @@ const CategoryPage = () => {
   );
 };
 
-export default CategoryPage;
+export default SubcategoryPage;

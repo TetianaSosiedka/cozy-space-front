@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Main = styled.main`
   display: flex;
   flex-wrap: wrap;
-  padding-top: 40px;
+  padding-top: 50px;
   padding-bottom: 60px;
 `;
 
