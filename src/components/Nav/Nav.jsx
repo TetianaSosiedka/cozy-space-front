@@ -58,8 +58,8 @@ const Nav = () => {
       </Ul>
       {hidden && (
         <HiddenNav>
-          {stateHiddenLinks.map(item => {
-            if (hiddenkey === 'brands') {
+          {hiddenkey === 'brands' &&
+            stateHiddenLinks.map(item => {
               return (
                 <Link
                   onClick={() => setHidden(!hidden)}
@@ -69,21 +69,21 @@ const Nav = () => {
                   {item}
                 </Link>
               );
-            }
-            for (const entre of Object.entries(item)) {
-              return (
+            })}
+          {hiddenkey !== 'brands' &&
+            stateHiddenLinks.map(item => {
+              return Object.entries(item).map(entrie => (
                 <Link
                   onClick={() => setHidden(!hidden)}
-                  key={entre[1]}
+                  key={entrie[1]}
                   to={`${ConvertingLinks(hiddenkey)}/${ConvertingLinks(
-                    entre[0]
+                    entrie[0]
                   )}`}
                 >
-                  {entre[1]}
+                  {entrie[1]}
                 </Link>
-              );
-            }
-          })}
+              ));
+            })}
         </HiddenNav>
       )}
     </NavStyle>
