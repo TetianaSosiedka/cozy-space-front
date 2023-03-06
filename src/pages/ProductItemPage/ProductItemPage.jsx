@@ -4,19 +4,19 @@ import Gallery from '../../components/Gallery/Gallery';
 import Button from 'components/Button/Button';
 import ProductItem from 'components/ProductCard/ProductCard';
 import ContainerItems from 'components/ContainerItems/ContainerItems';
+import Title from 'components/Title/Title';
 import icons from 'images/icons.svg';
 import {
   Article,
   GalleruWrap,
   RightColumn,
-  Title,
+  ProducrTitle,
   PriceWrap,
   Calculator,
   Price,
   Ditails,
   Available,
   Description,
-  AddTitle,
 } from './ProductItemPage.styled';
 
 import { product } from '../../constants/product';
@@ -36,7 +36,7 @@ const ProductsPage = () => {
             <Gallery />
           </GalleruWrap>
           <RightColumn>
-            <Title>{product.title}</Title>
+            <ProducrTitle>{product.title}</ProducrTitle>
             <PriceWrap>
               <Calculator>
                 <div>+</div>
@@ -75,7 +75,7 @@ const ProductsPage = () => {
             </Ditails>
           </RightColumn>
           <Description>{product.fullDescription}</Description>
-          <AddTitle>Посилення ефекту</AddTitle>
+          <Title>Посилення ефекту</Title>
           <ContainerItems items={items} />
         </Article>
       </Container>

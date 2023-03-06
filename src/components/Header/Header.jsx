@@ -60,11 +60,11 @@ const Header = () => {
             </Link>
           </LogoWrap>
           <RightColumn>
-            <a href="//">
+            <Link to="/account/login">
               <svg>
                 <use href={icons + '#user'}></use>
               </svg>
-            </a>
+            </Link>
             <a href="//">
               <svg>
                 <use href={icons + '#heart'}></use>

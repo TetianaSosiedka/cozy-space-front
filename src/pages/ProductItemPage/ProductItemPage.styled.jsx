@@ -21,7 +21,7 @@ export const RightColumn = styled.div`
   }
 `;
 
-export const Title = styled.h2`
+export const ProducrTitle = styled.h2`
   margin-top: 25px;
   font-family: ${props => props.theme.fonts.headers};
   font-weight: 700;
@@ -113,12 +113,4 @@ export const Available = styled.p`
 export const Description = styled.p`
   margin-top: 40px;
   line-height: 1.4;
-`;
-
-export const AddTitle = styled.h3`
-  margin-top: 50px;
-  font-family: ${props => props.theme.fonts.headers};
-  font-weight: 700;
-  font-size: 30px;
-  color: ${props => props.theme.colors.accentActive};
 `;

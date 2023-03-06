@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ConvertingLinks } from 'hooks/ConvertingLinks';
+import { ConvertingLinks } from 'helpers/ConvertingLinks';
 import lightLeaf from 'images/light-leaf.png';
 import icons from 'images/icons.svg';
 import Button from 'components/Button/Button';

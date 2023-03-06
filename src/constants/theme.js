@@ -11,6 +11,7 @@ export const theme = {
     accentActive: '#384e12',
     accentLight: '#f0ebd8',
     accentDark: '#2b2e34',
+    accentRed: '#d40000',
   },
 
   //

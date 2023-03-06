@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ConvertingLinks } from 'hooks/ConvertingLinks';
+import { ConvertingLinks } from 'helpers/ConvertingLinks';
 
 import { NavLinks } from 'constants/navLinks.js';
 
