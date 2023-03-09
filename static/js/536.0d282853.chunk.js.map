@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/536.0d282853.chunk.js","mappings":"6IAIA,UAJoB,WAClB,OAAO","sources":["pages/CabinetPage/CabinetPage.jsx"],"sourcesContent":["const CabinetPage = () => {\n  return <p>My Cabinet</p>;\n};\n\nexport default CabinetPage;\n"],"names":[],"sourceRoot":""}

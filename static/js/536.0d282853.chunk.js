@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcozy_space_front=self.webpackChunkcozy_space_front||[]).push([[536],{6536:function(e,n,c){c.r(n);var t=c(184);n.default=function(){return(0,t.jsx)("p",{children:"My Cabinet"})}}}]);
+//# sourceMappingURL=536.0d282853.chunk.js.map
