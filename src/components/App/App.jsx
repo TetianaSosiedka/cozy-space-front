@@ -11,6 +11,8 @@ const ProductItemPage = lazy(() =>
   import('pages/ProductItemPage/ProductItemPage')
 );
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const CabinetPage = lazy(() => import('pages/CabinetPage/CabinetPage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 
 export const App = () => {
   return (
@@ -20,7 +22,9 @@ export const App = () => {
         <Route path="/:category" element={<CategoryPage />} />
         <Route path="/:category/:subcategory" element={<SubcategoryPage />} />
         <Route path="/product/:product" element={<ProductItemPage />} />
-        <Route path="/account/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/mycabinet" element={<CabinetPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Route>
       <Route path="*" element={<p>Path not resolved</p>} />
     </Routes>

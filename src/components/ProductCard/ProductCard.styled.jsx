@@ -67,6 +67,7 @@ export const Caption = styled.div`
   box-shadow: ${props => props.theme.colors.accentActive} 0px -45px 30px -26px
     inset;
   transition: box-shadow 0.25s ${props => props.theme.action.timingFunction};
+  border-radius: 0 0 3px 3px;
   @media ${props => props.theme.screens.tablet} {
     padding-top: 20px;
   }

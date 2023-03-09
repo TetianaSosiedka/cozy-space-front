@@ -1,15 +1,7 @@
 import styled from 'styled-components';
-import { TextField } from '@mui/material';
-
-export const Line = styled.div`
-  margin-top: 20px;
-  margin-bottom: 40px;
-  width: 100%;
-  height: 2px;
-  background-color: ${props => props.theme.colors.accent};
-`;
 
 export const LoginGrid = styled.div`
+  margin-top: 60px;
   @media ${props => props.theme.screens.tablet} {
     display: flex;
   }
@@ -44,7 +36,8 @@ export const LoginWrap = styled.div`
       flex-basis: calc(100% - 90px);
     }
   }
-  button {
+  button,
+  a {
     margin-top: auto;
   }
 
@@ -80,32 +73,15 @@ export const LoginForm = styled.form`
   }
 `;
 
-export const CssTextField = styled(TextField)`
-  input {
-    font-family: ${props => props.theme.fonts.body};
-    font-size: 15px;
-  }
-  label {
-    font-family: ${props => props.theme.fonts.headers};
-    font-weight: 700;
-    font-size: 14px;
-    color: ${props => props.theme.colors.accentActive};
-  }
-  label.Mui-focused {
-    color: ${props => props.theme.colors.accent};
-  }
-  .MuiInput-underline:after {
-    border-bottom-color: ${props => props.theme.colors.accentActive};
-  }
-  .MuiOutlinedInput-root {
-    fieldset {
-      border-color: ${props => props.theme.colors.accentRed};
-    }
-    :hover fieldset {
-      border-color: yellow;
-    }
-    .Mui-focused fieldset {
-      border-color: ${props => props.theme.colors.accentActive};
-    }
+export const ErrorMesage = styled.p`
+  margin-bottom: 15px;
+  color: ${props => props.theme.colors.accentRed};
+`;
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: -12px;
+  @media ${props => props.theme.screens.tablet} {
+    margin-top: -27px;
   }
 `;

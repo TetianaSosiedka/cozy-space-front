@@ -60,7 +60,7 @@ const Header = () => {
             </Link>
           </LogoWrap>
           <RightColumn>
-            <Link to="/account/login">
+            <Link to="/login">
               <svg>
                 <use href={icons + '#user'}></use>
               </svg>

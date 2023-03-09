@@ -1,27 +1,42 @@
-import { useFormik } from 'formik';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useLoginMutation } from '../../redux/Auth/authApi';
 
+import { useFormik } from 'formik';
 import Container from 'components/Container/Container';
 import Footer from 'components/Footer/Footer';
 import Title from 'components/Title/Title';
 import icons from 'images/icons.svg';
+import TextField from 'components/TextField/TextField';
 import Button from 'components/Button/Button';
+import Link from 'components/Button/Link';
+import Loader from 'components/Loader/Loader';
 
 import { LoginSchema } from 'helpers/ValidationShemas';
 
 import {
-  Line,
   LoginGrid,
   LoginWrap,
   ExplainingText,
   LoginForm,
-  CssTextField,
+  LoadingContainer,
+  ErrorMesage,
 } from './LoginPage.styled';
 
 const LoginPage = () => {
-  const onSubmit = async (values, actions) => {
-    console.log(values);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    actions.resetForm();
+  const [login, { isError, isLoading, isSuccess }] = useLoginMutation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isSuccess) {
+      navigate('/mycabinet', { replace: true });
+    }
+  }, [isSuccess, navigate]);
+
+  const onSubmit = async (values /*, actions*/) => {
+    await login(values);
+    // await new Promise(resolve => setTimeout(resolve, 1000));
+    // actions.resetForm();
   };
 
   const {
@@ -45,7 +60,6 @@ const LoginPage = () => {
     <>
       <Container>
         <Title>Авторизація</Title>
-        <Line />
         <LoginGrid>
           <LoginWrap>
             <svg>
@@ -56,7 +70,7 @@ const LoginPage = () => {
               Після реєстрації ви зможете швидше здійснювати замовлення,
               зберігати обрані товари та історії замовлень.
             </ExplainingText>
-            <Button type={'button'}>продовжити</Button>
+            <Link link={'/register'}>продовжити</Link>
           </LoginWrap>
           <LoginWrap>
             <svg>
@@ -64,7 +78,18 @@ const LoginPage = () => {
             </svg>
             <span>Увійти до особистого кабінету</span>
             <LoginForm onSubmit={handleSubmit} autoComplete="off">
-              <CssTextField
+              {isError && (
+                <ErrorMesage>
+                  Невірно вказані поле E-Mail і/або пароль!
+                </ErrorMesage>
+              )}
+              {isLoading && (
+                <LoadingContainer>
+                  <Loader margin={'0'} />
+                </LoadingContainer>
+              )}
+
+              <TextField
                 variant="standard"
                 fullWidth
                 id="email"
@@ -76,7 +101,7 @@ const LoginPage = () => {
                 error={touched.email && Boolean(errors.email)}
                 helperText={touched.email && errors.email}
               />
-              <CssTextField
+              <TextField
                 variant="standard"
                 fullWidth
                 id="password"

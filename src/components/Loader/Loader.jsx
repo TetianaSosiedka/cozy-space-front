@@ -1,13 +1,13 @@
 import { Hearts } from 'react-loader-spinner';
 
-const Loader = () => {
+const Loader = ({ margin = '100px 0 0 0' }) => {
   return (
     <Hearts
       height="100"
       width="100%"
       color="#bade9c"
       ariaLabel="hearts-loading"
-      wrapperStyle={{ marginTop: '100px' }}
+      wrapperStyle={{ margin: margin }}
       wrapperClass=""
       visible={true}
     />

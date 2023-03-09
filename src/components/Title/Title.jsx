@@ -1,7 +1,12 @@
-import { TitleStyle } from './Title.styled';
+import { TitleStyle, Line } from './Title.styled';
 
 const Title = ({ children }) => {
-  return <TitleStyle>{children}</TitleStyle>;
+  return (
+    <>
+      <TitleStyle>{children}</TitleStyle>
+      <Line />
+    </>
+  );
 };
 
 export default Title;
