@@ -1,16 +1,19 @@
 import icons from 'images/icons.svg';
-import { ButtonLinkStyle } from './Button.styled';
 
-const ButtonLink = ({ iconId, children }) => {
+import { LinkStyle } from './Button.styled';
+
+export { LinkStyle } from './Button.styled';
+
+const ButtonLink = ({ link, children, iconId = '' }) => {
   return (
-    <ButtonLinkStyle>
+    <LinkStyle to={link}>
       {iconId && (
         <svg>
           <use href={icons + `#${iconId}`}></use>
         </svg>
       )}
       {children}
-    </ButtonLinkStyle>
+    </LinkStyle>
   );
 };
 

@@ -9,7 +9,7 @@ import Title from 'components/Title/Title';
 import icons from 'images/icons.svg';
 import TextField from 'components/TextField/TextField';
 import Button from 'components/Button/Button';
-import Link from 'components/Button/Link';
+import Link from 'components/Button/ButtonLink';
 import Loader from 'components/Loader/Loader';
 
 import { LoginSchema } from 'helpers/ValidationShemas';

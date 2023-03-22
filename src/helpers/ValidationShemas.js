@@ -1,7 +1,8 @@
 import * as yup from 'yup';
 
-const passwordRules =
-  /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/;
+const passwordRules = /^.*(?=.{6,})((?=.*\d){1})((?=.*[a-z]){1}).*$/;
+
+const number = /^[0123456789]*$/;
 
 export const LoginSchema = yup.object({
   email: yup
@@ -10,11 +11,8 @@ export const LoginSchema = yup.object({
     .required("Поле обов'язкове для заповнення"),
   password: yup
     .string('Введіть пароль')
-    .min(8, 'Пароль має бути мінімум 8 символів')
-    .matches(
-      passwordRules,
-      'Пароль має містити хоча б одину велику літеру, одну цифру та один спеціальний символ'
-    )
+    .min(6, 'Пароль має бути мінімум 6 символів')
+    .matches(passwordRules, 'Пароль має містити букви і числа')
     .required("Поле обов'язкове для заповнення"),
 });
 
@@ -26,11 +24,8 @@ export const RegisterSchema = yup.object({
 
   password: yup
     .string('Введіть пароль')
-    .min(8, 'Пароль має бути мінімум 8 символів')
-    .matches(
-      passwordRules,
-      'Пароль має містити хоча б одину велику літеру, одну цифру та один спеціальний символ'
-    )
+    .min(6, 'Пароль має бути мінімум 6 символів')
+    .matches(passwordRules, 'Пароль має містити букви і числа')
     .required("Поле обов'язкове для заповнення"),
 
   confirmPassword: yup
@@ -46,4 +41,29 @@ export const RegisterSchema = yup.object({
   surname: yup
     .string('Введіть прізвище')
     .required("Поле обов'язкове для заповнення"),
+
+  phone: yup
+    .string('Введіть номер телефона')
+    .min(17, 'Телефон має містити 10 цифр')
+    .required("Поле обов'язкове для заповнення"),
+
+  country: yup.string(),
+
+  region: yup.string(),
+
+  city: yup
+    .string('Введіть назву міста')
+    .min(2, 'Назва міста має містити мінімум 2 символа'),
+
+  index: yup
+    .string('Введіть індекс')
+    .length(5, 'Індекс має складатися з 5 цифр')
+    .matches(number, 'Індекс не може містити щось, крім цифр'),
+
+  post: yup
+    .string('Введіть номер відділення Нової пошти')
+    .matches(
+      number,
+      'Номер відділення Нової пошти не може містити щось, крім цифр'
+    ),
 });

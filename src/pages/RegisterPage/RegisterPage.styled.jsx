@@ -26,8 +26,13 @@ export const WarningMessage = styled.p`
   }
 `;
 
+export const FormsContainer = styled.div`
+  position: relative;
+`;
+
 export const RegisterForm = styled.form`
   width: 100%;
+  margin-bottom: 60px;
   .css-wb57ya-MuiFormControl-root-MuiTextField-root {
     margin-bottom: 10px;
   }

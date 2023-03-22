@@ -6,7 +6,7 @@ import { userApi } from './Auth/authApi';
 
 import {
   persistStore,
-  //persistReducer,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -14,19 +14,19 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-//import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage';
 
-// const persistUserConfig = {
-//   key: 'user',
-//   version: 1,
-//   storage,
-// };
+const persistUserConfig = {
+  key: 'user',
+  whitelist: ['token'],
+  storage,
+};
 
-// const persistedUserReducer = persistReducer(persistUserConfig, userReducer);
+const persistedUserReducer = persistReducer(persistUserConfig, userReducer);
 
 export const store = configureStore({
   reducer: {
-    auth: userReducer,
+    auth: persistedUserReducer,
     [userApi.reducerPath]: userApi.reducer,
   },
   middleware: getDefaultMiddleware =>

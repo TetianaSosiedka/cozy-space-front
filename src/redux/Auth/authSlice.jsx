@@ -3,8 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import { userApi } from './authApi';
 
 const initialState = {
-  name: '',
   email: '',
+  subscription: '',
+  token: '',
 };
 
 export const userSlice = createSlice({
@@ -15,11 +16,42 @@ export const userSlice = createSlice({
     //Login
     builder.addMatcher(
       userApi.endpoints.login.matchFulfilled,
-      (state, { payload }) => {
-        const { user } = payload;
+      (state, action) => {
+        state.email = action.payload.email;
+        state.subscription = action.payload.subscription;
+        state.token = action.payload.token;
+      }
+    );
 
-        state.name = user.name;
-        state.email = user.email;
+    //Register
+    builder.addMatcher(
+      userApi.endpoints.register.matchFulfilled,
+      (state, action) => {
+        state.email = action.payload.email;
+        state.subscription = action.payload.subscription;
+        console.log(action.payload.status);
+      }
+    );
+
+    //currentUser Success
+    builder.addMatcher(
+      userApi.endpoints.currentUser.matchFulfilled,
+      (state, action) => {
+        state.email = action.payload.email;
+        state.subscription = action.payload.subscription;
+      }
+    );
+
+    //currentUser Error
+    builder.addMatcher(
+      userApi.endpoints.currentUser.matchRejected,
+      (state, { payload }) => {
+        if (!payload) {
+          return;
+        }
+        if (payload.status === 401) {
+          state.token = '';
+        }
       }
     );
   },

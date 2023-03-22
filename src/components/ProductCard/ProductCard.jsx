@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ConvertingLinks } from 'helpers/ConvertingLinks';
 import lightLeaf from 'images/light-leaf.png';
 import icons from 'images/icons.svg';
-import Button from 'components/Button/ButonLink';
+import Button from 'components/Button/Button';
 import { product } from 'constants/product';
 
 import {

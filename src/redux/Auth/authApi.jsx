@@ -25,7 +25,26 @@ export const userApi = createApi({
       }),
       invalidatesTags: ['User'],
     }),
+
+    //useRegisterMutation
+    register: builder.mutation({
+      query: payload => ({
+        url: '/signup',
+        method: 'POST',
+        body: payload,
+      }),
+      invalidatesTags: ['User'],
+    }),
+
+    //useCurrentUserQuery
+    currentUser: builder.query({
+      query: () => ({
+        url: '/current',
+      }),
+      providesTags: ['User'],
+    }),
   }),
 });
 
-export const { useLoginMutation } = userApi;
+export const { useLoginMutation, useRegisterMutation, useCurrentUserQuery } =
+  userApi;
