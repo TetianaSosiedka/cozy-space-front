@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cozy-space-front/static/css/main.b4c9f9c8.css",
-    "main.js": "/cozy-space-front/static/js/main.46fb8837.js",
+    "main.js": "/cozy-space-front/static/js/main.b199b565.js",
     "static/js/933.05d0f6e1.chunk.js": "/cozy-space-front/static/js/933.05d0f6e1.chunk.js",
     "static/css/446.5bbc69b0.chunk.css": "/cozy-space-front/static/css/446.5bbc69b0.chunk.css",
     "static/js/446.3b67b39d.chunk.js": "/cozy-space-front/static/js/446.3b67b39d.chunk.js",
@@ -35,7 +35,7 @@
     "static/media/revicons.woff": "/cozy-space-front/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/cozy-space-front/index.html",
     "main.b4c9f9c8.css.map": "/cozy-space-front/static/css/main.b4c9f9c8.css.map",
-    "main.46fb8837.js.map": "/cozy-space-front/static/js/main.46fb8837.js.map",
+    "main.b199b565.js.map": "/cozy-space-front/static/js/main.b199b565.js.map",
     "933.05d0f6e1.chunk.js.map": "/cozy-space-front/static/js/933.05d0f6e1.chunk.js.map",
     "446.5bbc69b0.chunk.css.map": "/cozy-space-front/static/css/446.5bbc69b0.chunk.css.map",
     "446.3b67b39d.chunk.js.map": "/cozy-space-front/static/js/446.3b67b39d.chunk.js.map",
@@ -53,6 +53,6 @@
   },
   "entrypoints": [
     "static/css/main.b4c9f9c8.css",
-    "static/js/main.46fb8837.js"
+    "static/js/main.b199b565.js"
   ]
 }
