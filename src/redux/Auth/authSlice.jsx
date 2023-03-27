@@ -3,8 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import { userApi } from './authApi';
 
 const initialState = {
-  email: '',
-  subscription: '',
+  user: {
+    email: '',
+    subscription: '',
+  },
   token: '',
 };
 
@@ -27,9 +29,8 @@ export const userSlice = createSlice({
     builder.addMatcher(
       userApi.endpoints.register.matchFulfilled,
       (state, action) => {
-        state.email = action.payload.email;
-        state.subscription = action.payload.subscription;
-        console.log(action.payload.status);
+        state.user = action.payload.user;
+        state.token = action.payload.token;
       }
     );
 

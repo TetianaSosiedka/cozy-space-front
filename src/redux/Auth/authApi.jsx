@@ -4,7 +4,7 @@ export const userApi = createApi({
   reducerPath: 'userApi',
 
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3001/api/users',
+    baseUrl: 'https://cozy-space-back.onrender.com/api/auth',
     prepareHeaders: (headers, { getState }) => {
       const { token = '' } = getState().auth;
 
@@ -29,7 +29,7 @@ export const userApi = createApi({
     //useRegisterMutation
     register: builder.mutation({
       query: payload => ({
-        url: '/signup',
+        url: '/register',
         method: 'POST',
         body: payload,
       }),
