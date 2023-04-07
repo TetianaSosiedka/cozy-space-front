@@ -32,6 +32,8 @@ const TextField = ({
   error = false,
   helperText = '',
   select = '',
+  multiline,
+  rows = 1,
   children,
 }) => {
   return (
@@ -49,6 +51,8 @@ const TextField = ({
           onBlur={onBlur}
           error={error}
           helperText={helperText}
+          multiline
+          rows={rows}
         />
       )}
       {select && (

@@ -5,6 +5,7 @@ import { userApi } from './authApi';
 const initialState = {
   user: {
     email: '',
+    name: '',
     subscription: '',
   },
   token: '',
@@ -19,8 +20,7 @@ export const userSlice = createSlice({
     builder.addMatcher(
       userApi.endpoints.login.matchFulfilled,
       (state, action) => {
-        state.email = action.payload.email;
-        state.subscription = action.payload.subscription;
+        state.user = action.payload.user;
         state.token = action.payload.token;
       }
     );
@@ -38,8 +38,7 @@ export const userSlice = createSlice({
     builder.addMatcher(
       userApi.endpoints.currentUser.matchFulfilled,
       (state, action) => {
-        state.email = action.payload.email;
-        state.subscription = action.payload.subscription;
+        state.user = action.payload.user;
       }
     );
 
@@ -50,7 +49,7 @@ export const userSlice = createSlice({
         if (!payload) {
           return;
         }
-        if (payload.status === 401) {
+        if (payload.status === 500) {
           state.token = '';
         }
       }

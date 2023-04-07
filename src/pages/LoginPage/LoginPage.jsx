@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { useLoginMutation } from '../../redux/Auth/authApi';
 
 import { useFormik } from 'formik';
@@ -26,17 +27,18 @@ import {
 const LoginPage = () => {
   const [login, { isError, isLoading, isSuccess }] = useLoginMutation();
   const navigate = useNavigate();
+  const { subscription } = useSelector(state => state.auth.user);
 
   useEffect(() => {
     if (isSuccess) {
-      navigate('/mycabinet', { replace: true });
+      subscription === 'admin'
+        ? navigate('/admin', { replace: true })
+        : navigate('/mycabinet', { replace: true });
     }
-  }, [isSuccess, navigate]);
+  }, [isSuccess, navigate, subscription]);
 
-  const onSubmit = async (values /*, actions*/) => {
+  const onSubmit = async values => {
     await login(values);
-    // await new Promise(resolve => setTimeout(resolve, 1000));
-    // actions.resetForm();
   };
 
   const {
@@ -90,8 +92,6 @@ const LoginPage = () => {
               )}
 
               <TextField
-                variant="standard"
-                fullWidth
                 id="email"
                 label="Email"
                 type="email"
@@ -102,8 +102,6 @@ const LoginPage = () => {
                 helperText={touched.email && errors.email}
               />
               <TextField
-                variant="standard"
-                fullWidth
                 id="password"
                 label="Password"
                 type="password"

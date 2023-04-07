@@ -5,7 +5,6 @@ import { lazy } from 'react';
 import { useCurrentUserQuery } from 'redux/Auth/authApi';
 
 import PrivateRoutes from 'components/Routes/PrivateRoutes';
-import Restricted from 'components/Routes/Restricted';
 
 const SharedLayout = lazy(() => import('components/SharedLayout/SharedLayout'));
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
@@ -18,6 +17,7 @@ const ProductItemPage = lazy(() =>
 );
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const CabinetPage = lazy(() => import('pages/CabinetPage/CabinetPage'));
+const AdminPage = lazy(() => import('pages/AdminPage/AdminPage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 
 export const App = () => {
@@ -34,12 +34,11 @@ export const App = () => {
 
         <Route path="/" element={<PrivateRoutes />}>
           <Route path="/mycabinet" element={<CabinetPage />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Route>
 
-        <Route path="/" element={<Restricted />}>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Route>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Route>
       <Route path="*" element={<p>Path not resolved</p>} />
     </Routes>

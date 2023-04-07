@@ -1,5 +1,7 @@
+import Container from 'components/Container/Container';
+
 const CabinetPage = () => {
-  return <p>My Cabinet</p>;
+  return <Container>My Cabinet</Container>;
 };
 
 export default CabinetPage;

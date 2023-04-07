@@ -1,8 +1,10 @@
-export const NavLinks = [
+import { brands } from './brands';
+
+export const categories = [
   {
     key: 'face',
     title: 'Догляд за обличчям',
-    hiddenNavLinks: [
+    subcategory: [
       { 'makeup-removal': 'Зняття макіяжу' },
       { 'skin-cleansing': 'Очищення шкіри' },
       { peeling: 'Пілінг' },
@@ -22,7 +24,7 @@ export const NavLinks = [
   {
     key: 'hair',
     title: 'Волосся',
-    hiddenNavLinks: [
+    subcategory: [
       { shampoo: 'Шампунь' },
       { 'scalp-scrub': 'Скраб для шкіри голови' },
       { mask: 'Маска' },
@@ -34,7 +36,7 @@ export const NavLinks = [
   {
     key: 'body',
     title: 'Тіло',
-    hiddenNavLinks: [
+    subcategory: [
       { 'shower-gel': 'Гель для душу ' },
       { 'body-scrub': 'Скраб для тіла' },
       { 'anti-cellulite': 'Антицелюлітні засоби' },
@@ -46,30 +48,7 @@ export const NavLinks = [
   {
     key: 'brands',
     title: 'Бренди',
-    hiddenNavLinks: [
-      'Missha',
-      'Medi Peel',
-      'Farm Stay',
-      'Masil',
-      'Moremo',
-      'Daeng Gi Meo Ri',
-      'Dr.Jart + ',
-      'Innisfree',
-      'Eyenlip',
-      'Valmona',
-      'HOLIKA HOLIKA',
-      'Ellips',
-      'Bathpa',
-      'Kiss by Rosemine',
-      'Too Cool For School',
-      'Bueno',
-      'Jennyhouse',
-      'Etude House',
-      'The Ordinary',
-      'Jigott',
-      'Lador',
-      'Naturia',
-    ],
+    subcategory: brands,
   },
   { key: 'novelty', title: 'Новинки' },
 ];

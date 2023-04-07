@@ -2,8 +2,6 @@ import icons from 'images/icons.svg';
 
 import { LinkStyle } from './Button.styled';
 
-export { LinkStyle } from './Button.styled';
-
 const ButtonLink = ({ link, children, iconId = '' }) => {
   return (
     <LinkStyle to={link}>

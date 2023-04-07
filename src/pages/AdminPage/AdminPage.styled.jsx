@@ -1,5 +1,6 @@
-const AdminPage = () => {
-  return <p>Admin Page</p>;
-};
+import styled from 'styled-components';
 
-export default AdminPage;
+export const FormContainer = styled.div`
+  margin-top: 45px;
+  margin-bottom: 45px;
+`;

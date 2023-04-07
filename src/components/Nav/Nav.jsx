@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ConvertingLinks } from 'helpers/ConvertingLinks';
 
-import { NavLinks } from 'constants/navLinks.js';
+import { categories } from 'constants/categories.js';
 
 import { NavStyle, Ul, Li, HiddenNav } from './Nav.styled';
 
@@ -13,7 +13,7 @@ const Nav = () => {
   });
   const [stateHiddenLinks, setStateHiddenLinks] = useState([]);
 
-  const HandleClick = async (hiddenNavLinks, key) => {
+  const HandleClick = async (subcategory, key) => {
     if (hiddenkey !== '' && hiddenkey === key) {
       setHidden({ hidden: false });
       setStateHiddenLinks([]);
@@ -21,23 +21,23 @@ const Nav = () => {
     }
     if (hiddenkey !== '' && hiddenkey !== key) {
       setHidden({ hidden: true, hiddenkey: key });
-      setStateHiddenLinks(hiddenNavLinks);
+      setStateHiddenLinks(subcategory);
       return;
     }
     setHidden({ hidden: !hidden, hiddenkey: key });
-    setStateHiddenLinks(hiddenNavLinks);
+    setStateHiddenLinks(subcategory);
   };
 
   return (
     <NavStyle>
       <Ul>
-        {NavLinks.map(({ key, title, hiddenNavLinks }) => {
-          if (hiddenNavLinks) {
+        {categories.map(({ key, title, subcategory }) => {
+          if (subcategory) {
             return (
               <Li
                 key={key}
                 onClick={() => {
-                  HandleClick(hiddenNavLinks, key);
+                  HandleClick(subcategory, key);
                 }}
               >
                 {title}
