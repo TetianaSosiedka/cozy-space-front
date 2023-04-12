@@ -150,6 +150,7 @@ const AddProductForm = () => {
               </MenuItem>
             ));
           }
+          return key;
         })}
       </TextField>
 
