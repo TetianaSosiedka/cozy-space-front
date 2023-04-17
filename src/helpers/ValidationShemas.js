@@ -67,3 +67,35 @@ export const RegisterSchema = yup.object({
       'Номер відділення Нової пошти не може містити щось, крім цифр'
     ),
 });
+
+export const AddProductSchema = yup.object({
+  title: yup
+    .string('Введіть заголовок')
+    .required("Поле ЗАГОЛОВОК обов'язкове для заповнення"),
+  name: yup
+    .string('Введіть назву товара')
+    .required("Поле Назва товару обов'язкове для заповнення"),
+  price: yup
+    .string('Введіть ціну товара')
+    .matches(number, 'Ціна не може містити щось, крім цифр')
+    .required("Поле ЦІНА товару обов'язкове для заповнення"),
+  volume: yup
+    .string("Введіть об'ем товара")
+    .matches(number, 'Обьем не може містити щось, крім цифр')
+    .required("Поле О'ЄМ обов'язкове для заповнення"),
+  brand: yup
+    .string('Введіть назву бренда')
+    .required("Поле БРЕНД обов'язкове для заповнення"),
+  categorie: yup
+    .string('')
+    .required("Поле КАТЕГОРІЯ обов'язкове для заповнення"),
+  markers: yup.array().required('Оберіть маркери товару'),
+  new: yup.bool(),
+  available: yup.bool(),
+  shortDescription: yup
+    .string('Введіть стислий опис товару')
+    .required("Поле СТИСЛИЙ ОПИС обов'язкове для заповнення"),
+  fullDescription: yup
+    .string('Введіть повний опис товару')
+    .required("Поле ПОВНИЙ ОПИС обов'язкове для заповнення"),
+});

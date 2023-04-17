@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from '@mui/material/Button';
 
 export const AddForm = styled.form`
   legend.css-u4tvz2-MuiFormLabel-root {
@@ -13,5 +14,24 @@ export const AddForm = styled.form`
       display: flex;
       flex-wrap: wrap;
     }
+  }
+`;
+
+export const Preview = styled.div`
+  width: 200px;
+  margin-bottom: 15px;
+`;
+
+export const UploadButton = styled(Button)`
+  &.css-sghohy-MuiButtonBase-root-MuiButton-root {
+    display: block;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    width: fit-content;
+    background-color: ${props => props.theme.colors.accent};
+  }
+
+  &.css-sghohy-MuiButtonBase-root-MuiButton-root:hover {
+    background-color: ${props => props.theme.colors.accentActive};
   }
 `;

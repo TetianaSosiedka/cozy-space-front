@@ -6,11 +6,16 @@ import MenuItem from '@mui/material/MenuItem';
 import TextField from 'components/TextField/TextField';
 import CheckboxField from 'components/CheckboxField/CheckboxField';
 import Button from 'components/Button/Button.jsx';
+import PrevievImage from 'components/PreviewImage';
 import { brands, categories, markers } from 'constants/index';
+import { AddProductSchema } from 'helpers/ValidationShemas';
 
-import { AddForm } from './AddProductForm.styled';
+import { AddForm, UploadButton, Preview } from './AddProductForm.styled';
+import { useRef } from 'react';
 
 const AddProductForm = () => {
+  const fileRef = useRef(null);
+
   const onSubmit = async values => {
     console.log(values);
   };
@@ -23,12 +28,11 @@ const AddProductForm = () => {
     handleBlur,
     handleChange,
     handleSubmit,
+    setFieldValue,
   } = useFormik({
     initialValues: {
-      coverImg: {
-        loading: false,
-        thumb: undefined,
-      },
+      coverImg: null,
+      galerry: [],
       title: '',
       name: '',
       price: '',
@@ -41,15 +45,46 @@ const AddProductForm = () => {
       shortDescription: '',
       fullDescription: '',
     },
+    validationSchema: AddProductSchema,
     onSubmit,
   });
 
   return (
     <AddForm onSubmit={handleSubmit} autoComplete="off">
-      <Button>
-        Upload
-        <input hidden multiple type="file" />
-      </Button>
+      <Preview>
+        {values.coverImg && <PrevievImage file={values.coverImg} />}
+      </Preview>
+
+      <UploadButton variant="contained" component="label">
+        Обрати обкладинку
+        <input
+          id="coverImg"
+          ref={fileRef}
+          hidden
+          accept="image/*"
+          type="file"
+          onChange={e => {
+            setFieldValue('coverImg', e.target.files[0]);
+          }}
+          onClick={() => {
+            fileRef.current.click();
+          }}
+        />
+      </UploadButton>
+
+      <UploadButton variant="contained" component="label">
+        Завантажити галерею
+        <input
+          id="galerry"
+          hidden
+          accept="image/*"
+          multiple
+          type="file"
+          onChange={e => {
+            setFieldValue('galerry', e.target.files);
+          }}
+        />
+      </UploadButton>
       <TextField
         id="title"
         label="Заголовок"
@@ -154,6 +189,19 @@ const AddProductForm = () => {
         })}
       </TextField>
 
+      <CheckboxField
+        name="new"
+        label="Новинка"
+        value={true}
+        onChange={handleChange}
+      />
+      <CheckboxField
+        name="available"
+        label="В наявності"
+        value={true}
+        onChange={handleChange}
+      />
+
       <FormControl component="fieldset">
         <FormLabel component="legend">Маркери</FormLabel>
         <FormGroup>
@@ -168,18 +216,6 @@ const AddProductForm = () => {
           ))}
         </FormGroup>
       </FormControl>
-      <CheckboxField
-        name="new"
-        label="Новинка"
-        value={true}
-        onChange={handleChange}
-      />
-      <CheckboxField
-        name="available"
-        label="В наявності"
-        value={true}
-        onChange={handleChange}
-      />
       <Button disabled={isSubmitting} type={'submit'}>
         Додати
       </Button>
