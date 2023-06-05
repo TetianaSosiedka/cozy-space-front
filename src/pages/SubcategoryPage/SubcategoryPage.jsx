@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import Container from 'components/Container/Container';
@@ -16,7 +16,7 @@ import {
 } from './SubcategoryPage.styled';
 
 const SubcategoryPage = () => {
-  const { category = '', subcategory = '' } = useParams();
+  // const { category = '', subcategory = '' } = useParams();
   // console.log(category, subcategory);
   const items = [
     <ProductItem key="1" />,
