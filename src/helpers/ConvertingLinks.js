@@ -1,3 +1,3 @@
 export const ConvertingLinks = string => {
-  return string.trim().toLowerCase().split(' ').join('-');
+  return String(string).trim().toLowerCase().split(' ').join('-');
 };

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Main = styled.main`
   padding-top: 40px;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
 `;
 
 export const Span = styled.span`

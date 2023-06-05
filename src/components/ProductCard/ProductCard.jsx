@@ -14,30 +14,44 @@ import {
   Caption,
   Details,
   Title,
-  ShortDescription,
+  // ShortDescription,
   Price,
   ButtonHeart,
   ButtonsWrap,
 } from './ProductCard.styled';
 
-const ProductItem = () => {
+const ProductItem = ({ url, name, description, price }) => {
+  const cutText = text => {
+    let cutedText = '...';
+
+    if (text) {
+      cutedText = `${String(text).slice(0, 500)} ...`;
+    }
+
+    return cutedText;
+  };
+
   return (
     <ItemWrap>
       <OverlayWrap>
-        <Img src={product.coverImage} alt="" />
+        <Img src={url} alt={name} height="400" width="300" />
         <Overlay>
-          <Link to={`/product/${ConvertingLinks(product.title)}`}>
+          <Link to={`/product/${ConvertingLinks(name)}`}>
             <img src={lightLeaf} alt="small logo" />
-            <Description>{product.shortDescription}</Description>
+            <Description>{cutText(description)}</Description>
           </Link>
         </Overlay>
       </OverlayWrap>
       <Caption>
         <Details>
-          <Link to={`/product/${ConvertingLinks(product.title)}`}>
-            <Title>{product.title}</Title>
-            <ShortDescription>{product.name}</ShortDescription>
-            <Price>{product.price} грн</Price>
+          <Link to={`/product/${ConvertingLinks(name)}`}>
+            <Title>{name}</Title>
+            {/* <ShortDescription>{name}</ShortDescription> */}
+          </Link>
+        </Details>
+        <ButtonsWrap>
+          <Link to={`/product/${ConvertingLinks(name)}`}>
+            <Price>{price} грн</Price>
           </Link>
           <ButtonHeart>
             {!product.favorite && (
@@ -51,8 +65,6 @@ const ProductItem = () => {
               </svg>
             )}
           </ButtonHeart>
-        </Details>
-        <ButtonsWrap>
           <Button type={'button'} iconId={'opencart'}>
             до кошика
           </Button>

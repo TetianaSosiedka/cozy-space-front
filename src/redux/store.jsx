@@ -3,6 +3,8 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 
 import userReducer from './Auth/authSlice';
 import { userApi } from './Auth/authApi';
+import productsReducer from './Products/productsSlice';
+import { productsApi } from './Products/productsApi';
 
 import {
   persistStore,
@@ -28,13 +30,17 @@ export const store = configureStore({
   reducer: {
     auth: persistedUserReducer,
     [userApi.reducerPath]: userApi.reducer,
+    products: productsReducer,
+    [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(userApi.middleware),
+    })
+      .concat(userApi.middleware)
+      .concat(productsApi.middleware),
 });
 
 export const persistor = persistStore(store);

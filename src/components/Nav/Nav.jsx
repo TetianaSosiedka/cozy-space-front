@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ConvertingLinks } from 'helpers/ConvertingLinks';
 
@@ -12,6 +12,27 @@ const Nav = () => {
     hiddenkey: '',
   });
   const [stateHiddenLinks, setStateHiddenLinks] = useState([]);
+
+  const bodyEl = document.body;
+
+  const clousedMenu = event => {
+    const element = event.target.className;
+    if (!element.includes('navEl')) {
+      setHidden({
+        hidden: false,
+        hiddenkey: '',
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (hidden === true) {
+      bodyEl.addEventListener('click', clousedMenu);
+    }
+    if (hidden === false) {
+      bodyEl.removeEventListener('click', clousedMenu);
+    }
+  }, [hidden, bodyEl]);
 
   const HandleClick = async (subcategory, key) => {
     if (hiddenkey !== '' && hiddenkey === key) {
@@ -30,11 +51,12 @@ const Nav = () => {
 
   return (
     <NavStyle>
-      <Ul>
+      <Ul className="navEl">
         {categories.map(({ key, title, subcategory }) => {
           if (subcategory) {
             return (
               <Li
+                className="navEl"
                 key={key}
                 onClick={() => {
                   HandleClick(subcategory, key);
@@ -46,6 +68,7 @@ const Nav = () => {
           }
           return (
             <Li
+              className="navEl"
               key={key}
               onClick={() => {
                 setHidden({ hidden: false });
@@ -57,7 +80,7 @@ const Nav = () => {
         })}
       </Ul>
       {hidden && (
-        <HiddenNav>
+        <HiddenNav className="navEl">
           {hiddenkey === 'brands' &&
             stateHiddenLinks.map(item => {
               return (

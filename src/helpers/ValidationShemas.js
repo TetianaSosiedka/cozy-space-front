@@ -69,6 +69,8 @@ export const RegisterSchema = yup.object({
 });
 
 export const AddProductSchema = yup.object({
+  coverImg: yup.string(),
+  galerry: yup.array(),
   title: yup
     .string('Введіть заголовок')
     .required("Поле ЗАГОЛОВОК обов'язкове для заповнення"),

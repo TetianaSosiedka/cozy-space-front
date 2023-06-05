@@ -12,12 +12,25 @@ export const ItemWrap = styled.div`
 
 export const OverlayWrap = styled.div`
   position: relative;
+  width: 100%;
+  height: 295px;
+  overflow: hidden;
+  @media ${props => props.theme.screens.tablet} {
+    height: 315px;
+  }
+  @media ${props => props.theme.screens.desktop} {
+    height: 400px;
+  }
   :hover > div {
     height: 100%;
   }
 `;
 
-export const Img = styled.img``;
+export const Img = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+`;
 
 export const Overlay = styled.div`
   position: absolute;
@@ -26,11 +39,11 @@ export const Overlay = styled.div`
   right: 0;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   background-color: ${props => props.theme.colors.accentActive};
   opacity: 0.85;
   overflow: hidden;
   width: 100%;
+  height: 100%;
   height: 0;
   overflow: hidden;
   transition: 0.5s ${props => props.theme.action.timingFunction};
@@ -38,12 +51,12 @@ export const Overlay = styled.div`
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 40%;
   }
 `;
 
 export const Description = styled.p`
-  padding: 10px;
+  padding: 15px;
   font-family: ${props => props.theme.fonts.body};
   font-size: 12px;
   color: ${props => props.theme.colors.accent};
@@ -61,7 +74,8 @@ export const Description = styled.p`
 `;
 
 export const Caption = styled.div`
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 15px;
   background-color: #ffffff;
   box-shadow: ${props => props.theme.colors.accentActive} 0px -45px 30px -26px
@@ -77,10 +91,14 @@ export const Caption = styled.div`
       inset;
     transition: box-shadow 0.25s ${props => props.theme.action.timingFunction};
   }
+  a {
+    width: 100%;
+  }
 `;
 
 export const Details = styled.div`
   position: relative;
+  width: 100%;
   padding-left: 5px;
   padding-right: 5px;
 `;
@@ -88,8 +106,8 @@ export const Details = styled.div`
 export const ButtonHeart = styled.button`
   border: none;
   position: absolute;
-  right: 10px;
-  bottom: 15px;
+  right: 25px;
+  bottom: 50px;
   background-color: transparent;
   svg {
     width: 30px;
@@ -126,7 +144,7 @@ export const ShortDescription = styled.span`
 export const Price = styled.span`
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  padding-top: 20px;
   padding-bottom: 20px;
   font-size: 20px;
   font-weight: bold;
@@ -134,4 +152,8 @@ export const Price = styled.span`
 `;
 export const ButtonsWrap = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
 `;

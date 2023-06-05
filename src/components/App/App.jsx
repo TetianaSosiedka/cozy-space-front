@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { lazy } from 'react';
+import { lazy, useEffect, useState } from 'react';
 
 import { useCurrentUserQuery } from 'redux/Auth/authApi';
+import { useGetProductsQuery } from 'redux/Products/productsApi';
 
 import PrivateRoutes from 'components/Routes/PrivateRoutes';
 
@@ -22,7 +23,18 @@ const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 
 export const App = () => {
   const { token } = useSelector(state => state.auth);
+  const { lastPage, currentPage } = useSelector(state => state.products);
+
+  const [page, setPage] = useState(currentPage);
+
   useCurrentUserQuery(null, { skip: !token });
+  useGetProductsQuery(page);
+
+  useEffect(() => {
+    if (currentPage < lastPage) {
+      setPage(currentPage + 1);
+    }
+  }, [currentPage, lastPage]);
 
   return (
     <Routes>

@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import Container from 'components/Container/Container';
 import ProductItem from 'components/ProductCard/ProductCard';
@@ -16,7 +17,7 @@ import {
 
 const SubcategoryPage = () => {
   const { category = '', subcategory = '' } = useParams();
-  console.log(category, subcategory);
+  // console.log(category, subcategory);
   const items = [
     <ProductItem key="1" />,
     <ProductItem key="2" />,
@@ -27,6 +28,8 @@ const SubcategoryPage = () => {
     <ProductItem key="7" />,
     <ProductItem key="8" />,
   ];
+  const { products } = useSelector(state => state.products);
+  console.log(products);
   return (
     <>
       <Container>
