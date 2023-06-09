@@ -1,5 +1,5 @@
 //import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 import Container from 'components/Container/Container';
 import ProductItem from 'components/ProductCard/ProductCard';
