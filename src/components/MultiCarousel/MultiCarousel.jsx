@@ -10,7 +10,7 @@ const MultiCarousel = ({ children }) => {
     },
     desktop: {
       breakpoint: { max: 1280, min: 768 },
-      items: 4,
+      items: 3,
     },
     tablet: {
       breakpoint: { max: 768, min: 550 },

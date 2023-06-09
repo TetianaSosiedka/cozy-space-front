@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import Loader from 'components/Loader/Loader';
 import Container from 'components/Container/Container';
-import ProductItem from 'components/ProductCard/ProductCard';
+import ProductCard from 'components/ProductCard/ProductCard';
 import MultiCarousel from 'components/MultiCarousel/MultiCarousel';
 import Footer from 'components/Footer/Footer';
 import { Main, Span } from './HomePage.styled';
@@ -11,12 +11,13 @@ const HomePage = () => {
   const { isSuccess, products } = useSelector(state => state.products);
 
   const items = products.map(product => (
-    <ProductItem
+    <ProductCard
       key={product.id}
       url={product.thumbnail_url}
       name={product.name}
       description={product.description}
       price={product.max_price}
+      id={product.id}
     />
   ));
   return (

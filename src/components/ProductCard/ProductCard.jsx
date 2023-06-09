@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ConvertingLinks } from 'helpers/ConvertingLinks';
 import lightLeaf from 'images/light-leaf.png';
+import ProductCover from 'images/product_cover.jpg';
 import icons from 'images/icons.svg';
 import Button from 'components/Button/Button';
 import { product } from 'constants/product';
+import { theme } from 'constants/theme';
 
 import {
   ItemWrap,
@@ -20,23 +22,31 @@ import {
   ButtonsWrap,
 } from './ProductCard.styled';
 
-const ProductItem = ({ url, name, description, price }) => {
+const ProductCard = ({ url, name, description, price, id }) => {
+  const screenWidth = window.screen.width;
+  const tabletWidth = theme.screensWidth.tabletWidth.slice(0, 3);
+  const desktopWidth = theme.screensWidth.desktopWidth.slice(0, 4);
+  const productItemPath = `/product/${ConvertingLinks(name)}/${id}`;
+
   const cutText = text => {
-    let cutedText = '...';
-
     if (text) {
-      cutedText = `${String(text).slice(0, 500)} ...`;
+      if (screenWidth < tabletWidth) {
+        return `${String(text).slice(0, 200)} ...`;
+      }
+      if (screenWidth < desktopWidth && screenWidth >= tabletWidth) {
+        return `${String(text).slice(0, 250)} ...`;
+      }
+      return `${String(text).slice(0, 500)} ...`;
     }
-
-    return cutedText;
   };
 
   return (
     <ItemWrap>
       <OverlayWrap>
-        <Img src={url} alt={name} height="400" width="300" />
+        {url && <Img src={url} alt={name} height="400" width="300" />}
+        {!url && <Img src={ProductCover} alt={name} height="400" width="300" />}
         <Overlay>
-          <Link to={`/product/${ConvertingLinks(name)}`}>
+          <Link to={productItemPath}>
             <img src={lightLeaf} alt="small logo" />
             <Description>{cutText(description)}</Description>
           </Link>
@@ -44,13 +54,13 @@ const ProductItem = ({ url, name, description, price }) => {
       </OverlayWrap>
       <Caption>
         <Details>
-          <Link to={`/product/${ConvertingLinks(name)}`}>
+          <Link to={productItemPath}>
             <Title>{name}</Title>
             {/* <ShortDescription>{name}</ShortDescription> */}
           </Link>
         </Details>
         <ButtonsWrap>
-          <Link to={`/product/${ConvertingLinks(name)}`}>
+          <Link to={productItemPath}>
             <Price>{price} грн</Price>
           </Link>
           <ButtonHeart>
@@ -74,4 +84,4 @@ const ProductItem = ({ url, name, description, price }) => {
   );
 };
 
-export default ProductItem;
+export default ProductCard;

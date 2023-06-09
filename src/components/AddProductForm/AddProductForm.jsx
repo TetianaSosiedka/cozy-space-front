@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import TextField from 'components/TextField/TextField';
 import CheckboxField from 'components/CheckboxField/CheckboxField';
 import Button from 'components/Button/Button.jsx';
-import PrevievImage from 'components/PreviewImage';
+import PrevievImage from 'components/PrevievImage';
 import { brands, categories, markers } from 'constants/index';
 import { AddProductSchema } from 'helpers/ValidationShemas';
 

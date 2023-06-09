@@ -28,8 +28,7 @@ const SubcategoryPage = () => {
     <ProductItem key="7" />,
     <ProductItem key="8" />,
   ];
-  const { products } = useSelector(state => state.products);
-  console.log(products);
+  //const { products } = useSelector(state => state.products);
   return (
     <>
       <Container>

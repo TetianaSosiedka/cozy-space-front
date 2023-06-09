@@ -42,7 +42,7 @@ export const App = () => {
         <Route index element={<HomePage />} />
         <Route path="/:category" element={<CategoryPage />} />
         <Route path="/:category/:subcategory" element={<SubcategoryPage />} />
-        <Route path="/product/:product" element={<ProductItemPage />} />
+        <Route path="/product/:product/:id" element={<ProductItemPage />} />
 
         <Route path="/" element={<PrivateRoutes />}>
           <Route path="/mycabinet" element={<CabinetPage />} />
